@@ -384,43 +384,79 @@ function Contact() {
   };
 
   return (
-    <Section
-      id="contact"
-      eyebrow="Contact"
-      title="Get the pilot scope template"
-      subtitle="Send a short message. We’ll reply with next steps."
-    >
-      <form onSubmit={onSubmit} className="max-w-xl space-y-4">
-        <input
-          required
-          placeholder="Name"
-          className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-        />
-        <input
-          required
-          type="email"
-          placeholder="Email"
-          className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-        />
-        <textarea
-          required
-          rows={4}
-          placeholder="Plant / context (one paragraph is enough)"
-          className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-        />
-        <button
-          type="submit"
-          className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
+   {/* ================= CONTACT ================= */}
+<Section
+  id="contact"
+  eyebrow="Contact"
+  title="Request pilot scope"
+  subtitle="Share basic plant information and we’ll respond with a feasibility checklist and pilot outline."
+>
+  <div className="grid gap-10 lg:grid-cols-2">
+    
+    {/* Left side text */}
+    <div className="space-y-4 text-sm text-zinc-600">
+      <p>
+        HydroTex focuses on feasibility-first wastewater upgrades.
+      </p>
+      <p>
+        Initial discussion typically covers:
+      </p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Plant size & process type</li>
+        <li>Current ETP setup</li>
+        <li>Sludge handling challenges</li>
+        <li>Regulatory pressure / discharge limits</li>
+      </ul>
+      <p className="pt-4">
+        Or email directly:{" "}
+        <a
+          href="mailto:amirtalebi58@gmail.com"
+          className="underline"
         >
-          <Mail className="h-4 w-4" /> Send message
-        </button>
-        {status === "ok" && (
-          <div className="text-sm text-zinc-600">
-            ✅ Message sent (demo mode). Next step: connect this to your email.
-          </div>
-        )}
-      </form>
-    </Section>
+          amirtalebi58@gmail.com
+        </a>
+      </p>
+    </div>
+
+    {/* Form */}
+    <form
+      action="https://formspree.io/f/mgolaaag"
+      method="POST"
+      className="max-w-xl space-y-4"
+    >
+      <input
+        required
+        name="name"
+        placeholder="Name"
+        className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
+      />
+
+      <input
+        required
+        type="email"
+        name="email"
+        placeholder="Email"
+        className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
+      />
+
+      <textarea
+        required
+        name="message"
+        rows={4}
+        placeholder="Plant / context (one paragraph is enough)"
+        className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
+      />
+
+      <button
+        type="submit"
+        className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
+      >
+        Send message
+      </button>
+    </form>
+  </div>
+</Section>
+
   );
 }
 
