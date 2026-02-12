@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, type ReactNode } from "react";
+import React, { type ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
   Droplets,
@@ -14,7 +14,6 @@ import {
   LineChart,
   CheckCircle2,
   ClipboardList,
-  Target,
   Users,
   Briefcase,
 } from "lucide-react";
@@ -169,13 +168,15 @@ function Hero() {
           </div>
 
           <div className="mt-6 text-xs text-zinc-500">
-            Early-stage venture. We share technical details during feasibility
+            Early-stage venture. Technical details are shared during feasibility
             and pilot discussions.
           </div>
         </div>
 
         <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-          <div className="text-sm font-semibold text-zinc-900">Commercial focus</div>
+          <div className="text-sm font-semibold text-zinc-900">
+            Commercial focus
+          </div>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-600">
             <li>Small–medium dyeing & finishing plants</li>
             <li>Plants with sludge/disposal and compliance pressure</li>
@@ -237,7 +238,7 @@ function Solution() {
       id="solution"
       eyebrow="Solution"
       title="A practical path: feasibility first, then pilot"
-      subtitle="HydroTex is not “a promise.” It’s a structured decision process that produces concrete outputs you can act on."
+      subtitle="HydroTex is a structured decision process that produces concrete outputs you can act on."
     >
       <div className="grid gap-5 md:grid-cols-3">
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
@@ -263,14 +264,14 @@ function Solution() {
             Next-step roadmap
           </div>
           <p className="mt-2 text-sm text-zinc-600">
-            A realistic recommendation: go/no-go and what to do next.
+            Go/no-go recommendation and a realistic implementation pathway.
           </p>
         </div>
       </div>
 
       <div className="mt-8 rounded-3xl border border-zinc-200 bg-zinc-50 p-6">
         <div className="text-sm font-semibold text-zinc-900">
-          What we measure during pilot (examples)
+          Pilot evaluation (examples)
         </div>
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           <div className="rounded-2xl border border-zinc-200 bg-white p-4">
@@ -309,7 +310,7 @@ function ForWho() {
       id="for-who"
       eyebrow="For who"
       title="Designed for real decision-makers"
-      subtitle="HydroTex is built for the people who carry the operational and compliance consequences."
+      subtitle="Built for the people who carry the operational and compliance consequences."
     >
       <div className="grid gap-5 md:grid-cols-3">
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
@@ -375,88 +376,70 @@ function Pilot() {
   );
 }
 
-function Contact() {
-  const [status, setStatus] = useState<"idle" | "ok">("idle");
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("ok");
-  };
-
+function ContactSection() {
   return (
-   {/* ================= CONTACT ================= */}
-<Section
-  id="contact"
-  eyebrow="Contact"
-  title="Request pilot scope"
-  subtitle="Share basic plant information and we’ll respond with a feasibility checklist and pilot outline."
->
-  <div className="grid gap-10 lg:grid-cols-2">
-    
-    {/* Left side text */}
-    <div className="space-y-4 text-sm text-zinc-600">
-      <p>
-        HydroTex focuses on feasibility-first wastewater upgrades.
-      </p>
-      <p>
-        Initial discussion typically covers:
-      </p>
-      <ul className="list-disc pl-5 space-y-1">
-        <li>Plant size & process type</li>
-        <li>Current ETP setup</li>
-        <li>Sludge handling challenges</li>
-        <li>Regulatory pressure / discharge limits</li>
-      </ul>
-      <p className="pt-4">
-        Or email directly:{" "}
-        <a
-          href="mailto:amirtalebi58@gmail.com"
-          className="underline"
-        >
-          amirtalebi58@gmail.com
-        </a>
-      </p>
-    </div>
-
-    {/* Form */}
-    <form
-      action="https://formspree.io/f/mgolaaag"
-      method="POST"
-      className="max-w-xl space-y-4"
+    <Section
+      id="contact"
+      eyebrow="Contact"
+      title="Request pilot scope"
+      subtitle="Share basic plant information and we’ll respond with a feasibility checklist and pilot outline."
     >
-      <input
-        required
-        name="name"
-        placeholder="Name"
-        className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-      />
+      <div className="grid gap-10 lg:grid-cols-2">
+        <div className="space-y-4 text-sm text-zinc-600">
+          <p>HydroTex focuses on feasibility-first wastewater upgrades.</p>
+          <p>Initial discussion typically covers:</p>
+          <ul className="list-disc space-y-1 pl-5">
+            <li>Plant size & process type</li>
+            <li>Current ETP setup</li>
+            <li>Sludge handling challenges</li>
+            <li>Regulatory pressure / discharge limits</li>
+          </ul>
+          <p className="pt-4">
+            Or email directly:{" "}
+            <a href="mailto:amirtalebi58@gmail.com" className="underline">
+              amirtalebi58@gmail.com
+            </a>
+          </p>
+        </div>
 
-      <input
-        required
-        type="email"
-        name="email"
-        placeholder="Email"
-        className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-      />
+        <form
+          action="https://formspree.io/f/mgolaaag"
+          method="POST"
+          className="max-w-xl space-y-4"
+        >
+          <input
+            required
+            name="name"
+            placeholder="Name"
+            className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
+          />
 
-      <textarea
-        required
-        name="message"
-        rows={4}
-        placeholder="Plant / context (one paragraph is enough)"
-        className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-      />
+          <input
+            required
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
+          />
 
-      <button
-        type="submit"
-        className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
-      >
-        Send message
-      </button>
-    </form>
-  </div>
-</Section>
+          <textarea
+            required
+            name="message"
+            rows={4}
+            placeholder="Plant / context (one paragraph is enough)"
+            className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
+          />
 
+          <button
+            type="submit"
+            className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
+          >
+            <Mail className="h-4 w-4" />
+            Send message
+          </button>
+        </form>
+      </div>
+    </Section>
   );
 }
 
@@ -476,9 +459,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="text-xs text-zinc-500">
-            © {new Date().getFullYear()} HydroTex • v0.3
-          </div>
+          <div className="text-xs text-zinc-500">© HydroTex • v0.3</div>
         </div>
 
         <div className="mt-6 text-xs text-zinc-500">
@@ -499,7 +480,7 @@ export default function Page() {
       <Solution />
       <ForWho />
       <Pilot />
-      <Contact />
+      <ContactSection />
       <Footer />
     </div>
   );
