@@ -12,10 +12,10 @@ import {
   ArrowRight,
   Mail,
   LineChart,
+  CheckCircle2,
+  ClipboardList,
+  Target,
 } from "lucide-react";
-
-// HydroTex — Smart Green aligned venture homepage (neutral global positioning)
-// Includes: 1) Hero 2) Why now 3) Why different 4) Validation
 
 const Section = ({
   id,
@@ -54,9 +54,9 @@ function Nav() {
   const items = [
     { label: "Problem", href: "#problem" },
     { label: "Approach", href: "#approach" },
+    { label: "Investor snapshot", href: "#snapshot" },
     { label: "Why different", href: "#different" },
     { label: "Validation", href: "#validation" },
-    { label: "Business", href: "#business" },
     { label: "Pilot", href: "#pilot" },
     { label: "Contact", href: "#contact" },
   ];
@@ -71,7 +71,7 @@ function Nav() {
           <div className="leading-tight">
             <div className="text-sm font-semibold text-zinc-900">HydroTex</div>
             <div className="text-xs text-zinc-500">
-              Textile Wastewater Treatment Concept
+              Textile wastewater treatment concept
             </div>
           </div>
         </a>
@@ -89,10 +89,10 @@ function Nav() {
         </nav>
 
         <a
-          href="#contact"
+          href="#pilot"
           className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
         >
-          Discuss feasibility
+          Request a pilot scope
         </a>
       </div>
     </div>
@@ -110,52 +110,80 @@ function Hero() {
             transition={{ duration: 0.45 }}
             className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-5xl"
           >
-            Preparing textile plants for tighter wastewater enforcement.
+            Reduce sludge burden and compliance risk in textile wastewater.
           </motion.h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-600">
-            HydroTex is an early-stage GreenTech venture built around a
-            sludge-minimizing, circular wastewater treatment concept for textile
-            dyeing and finishing plants. The goal is to reduce compliance risk,
-            secondary waste generation, and long-term operating uncertainty as
-            enforcement tightens and textile markets transition.
+            HydroTex is an early-stage GreenTech concept structured as a{" "}
+            <span className="font-medium text-zinc-800">
+              feasibility → pilot → scale-up
+            </span>{" "}
+            pathway for textile dyeing and finishing plants. Public information
+            is intentionally high-level; technical details are shared during
+            feasibility/pilot discussions.
           </p>
 
-          <div className="mt-5 rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-sm text-zinc-700">
-            <span className="font-semibold">Why now:</span> enforcement is
-            tightening, discharge costs are rising, and “wait-and-see” increases
-            penalty risk — a structured feasibility → pilot pathway reduces
-            uncertainty before major upgrades.
+          <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
+              <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                Target outcomes
+              </div>
+              <div className="mt-2 text-sm font-medium text-zinc-900">
+                Less sludge • lower OPEX risk
+              </div>
+            </div>
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
+              <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                Built for
+              </div>
+              <div className="mt-2 text-sm font-medium text-zinc-900">
+                Dyeing & finishing ETPs
+              </div>
+            </div>
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
+              <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                Commercial path
+              </div>
+              <div className="mt-2 text-sm font-medium text-zinc-900">
+                Feasibility → paid pilot
+              </div>
+            </div>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#pilot"
+              href="#snapshot"
               className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
             >
-              See pilot pathway <ArrowRight className="h-4 w-4" />
+              View investor snapshot <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-5 py-3 text-sm font-medium text-zinc-800 shadow-sm hover:bg-zinc-50"
             >
-              Talk to us <ArrowRight className="h-4 w-4" />
+              Contact <ArrowRight className="h-4 w-4" />
             </a>
+          </div>
+
+          <div className="mt-6 text-xs text-zinc-500">
+            Note: Early-stage concept. No public performance claims are made on
+            this page.
           </div>
         </div>
 
         <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-          <div className="text-sm font-semibold text-zinc-900">Current focus</div>
+          <div className="text-sm font-semibold text-zinc-900">
+            Current focus (near-term)
+          </div>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-600">
-            <li>Small–medium textile dyeing & finishing plants</li>
-            <li>Regulation-driven textile markets (transition phase)</li>
-            <li>Environmental & compliance decision-makers</li>
+            <li>Small–medium dyeing & finishing plants</li>
+            <li>Regulation-driven markets (transition phase)</li>
+            <li>Decision-makers: plant, ETP, compliance</li>
           </ul>
 
           <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-sm text-zinc-700">
-            <span className="font-semibold">What we do:</span> feasibility and
-            pilot validation first — then a scale-up roadmap aligned with plant
-            constraints and compliance needs.
+            <span className="font-semibold">What we provide:</span> a defined
+            feasibility package + pilot scope template to de-risk adoption.
           </div>
         </div>
       </div>
@@ -167,35 +195,37 @@ function Problem() {
   return (
     <Section
       id="problem"
-      eyebrow="The problem"
-      title="Compliance pressure and sludge costs are increasing"
-      subtitle="Textile plants face tightening wastewater regulations, high operating and sludge disposal costs, and uncertainty about future-proof investments."
+      eyebrow="Problem"
+      title="Textile wastewater is getting riskier and more expensive"
+      subtitle="Plants face tightening enforcement, sludge/disposal burdens, and uncertainty about which upgrades will hold under future requirements."
     >
       <div className="grid gap-5 md:grid-cols-3">
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
           <Factory className="h-5 w-5 text-zinc-700" />
-          <div className="mt-3 font-semibold text-zinc-900">Regulatory risk</div>
+          <div className="mt-3 font-semibold text-zinc-900">
+            Enforcement pressure
+          </div>
           <p className="mt-2 text-sm text-zinc-600">
-            Tightening enforcement increases the risk of penalties or operational
-            disruption.
+            Non-compliance risk rises as standards tighten and monitoring
+            improves.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
           <Recycle className="h-5 w-5 text-zinc-700" />
-          <div className="mt-3 font-semibold text-zinc-900">High sludge burden</div>
+          <div className="mt-3 font-semibold text-zinc-900">Sludge burden</div>
           <p className="mt-2 text-sm text-zinc-600">
             Some conventional approaches shift pollutants into sludge, creating
-            disposal and cost challenges.
+            disposal costs and operational friction.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
           <Gauge className="h-5 w-5 text-zinc-700" />
           <div className="mt-3 font-semibold text-zinc-900">
-            Investment uncertainty
+            Capex decision risk
           </div>
           <p className="mt-2 text-sm text-zinc-600">
-            Plants hesitate to commit to large upgrades without site-specific
-            feasibility evidence.
+            Big upgrades are hard to justify without site-specific feasibility
+            evidence.
           </p>
         </div>
       </div>
@@ -207,33 +237,35 @@ function Approach() {
   return (
     <Section
       id="approach"
-      eyebrow="The approach"
-      title="A phased pathway: feasibility → pilot → scale-up"
-      subtitle="HydroTex is structured to reduce decision risk. We validate assumptions step-by-step before major capital commitments."
+      eyebrow="Approach"
+      title="A phased pathway to reduce decision risk"
+      subtitle="HydroTex is structured around validation first. The goal is to define KPIs and operating windows before scaling."
     >
       <div className="grid gap-5 md:grid-cols-3">
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-          <LineChart className="h-5 w-5 text-zinc-700" />
-          <div className="mt-3 font-semibold text-zinc-900">Feasibility first</div>
+          <ClipboardList className="h-5 w-5 text-zinc-700" />
+          <div className="mt-3 font-semibold text-zinc-900">
+            Feasibility package
+          </div>
           <p className="mt-2 text-sm text-zinc-600">
-            Site-specific profiling and validation to define operating windows
-            and KPIs.
+            Sampling plan, baseline characterization, KPI definition, and pilot
+            success criteria.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
           <Droplets className="h-5 w-5 text-zinc-700" />
           <div className="mt-3 font-semibold text-zinc-900">Pilot validation</div>
           <p className="mt-2 text-sm text-zinc-600">
-            Paid or co-funded proof-of-concept to test performance, waste
-            profile, and stability.
+            Proof-of-concept with monitoring focused on stability and secondary
+            waste profile.
           </p>
         </div>
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-          <ShieldCheck className="h-5 w-5 text-zinc-700" />
+          <LineChart className="h-5 w-5 text-zinc-700" />
           <div className="mt-3 font-semibold text-zinc-900">Scale-up roadmap</div>
           <p className="mt-2 text-sm text-zinc-600">
-            A data-driven plan aligned with compliance, operations, and
-            integration constraints.
+            Integration plan + monitoring approach + cost and compliance
+            assumptions.
           </p>
         </div>
       </div>
@@ -241,46 +273,121 @@ function Approach() {
   );
 }
 
-// 3) WHY DIFFERENT
+function Snapshot() {
+  return (
+    <Section
+      id="snapshot"
+      eyebrow="Investor snapshot"
+      title="What HydroTex is (and is not)"
+      subtitle="This section is written to be shareable with accelerators, partners, and early-stage investors — clear, specific, and controlled."
+    >
+      <div className="grid gap-5 lg:grid-cols-2">
+        <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
+          <div className="flex items-center gap-2 text-sm font-semibold text-zinc-900">
+            <CheckCircle2 className="h-5 w-5 text-zinc-800" />
+            What it is
+          </div>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-600">
+            <li>
+              A defined wastewater treatment concept for textile dyeing/finishing
+              plants
+            </li>
+            <li>
+              Structured as feasibility → pilot → scale-up (validation before big
+              capex)
+            </li>
+            <li>
+              Designed to minimize sludge burden and secondary waste risk
+              (objective)
+            </li>
+            <li>
+              Built with compliance documentation and monitoring needs in mind
+            </li>
+          </ul>
+        </div>
+
+        <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
+          <div className="flex items-center gap-2 text-sm font-semibold text-zinc-900">
+            <Target className="h-5 w-5 text-zinc-800" />
+            What we will measure (pilot KPIs)
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                Color/COD proxy
+              </div>
+              <div className="mt-2 text-sm font-medium text-zinc-900">
+                TBD (site-specific)
+              </div>
+            </div>
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                Sludge burden
+              </div>
+              <div className="mt-2 text-sm font-medium text-zinc-900">
+                TBD (baseline vs pilot)
+              </div>
+            </div>
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                Secondary waste
+              </div>
+              <div className="mt-2 text-sm font-medium text-zinc-900">
+                Profile + handling plan
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-zinc-200 bg-white p-4 text-sm text-zinc-700">
+            <span className="font-semibold">Positioning:</span> neutral global
+            framing, with emphasis on regulation-driven and transition-stage
+            textile markets.
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
 function WhyDifferent() {
   return (
     <Section
       id="different"
       eyebrow="Why different"
-      title="Lower sludge. Lower surprise costs."
-      subtitle="Many approaches transfer pollutants into sludge or create new chemical burdens. HydroTex is structured to minimize secondary waste and reduce decision risk with step-by-step validation."
+      title="Minimize sludge and avoid hidden trade-offs"
+      subtitle="Many solutions trade one cost for another. HydroTex is designed to explicitly track secondary waste and compliance documentation from day one."
     >
       <div className="grid gap-5 md:grid-cols-3">
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
           <Recycle className="h-5 w-5 text-zinc-700" />
           <div className="mt-3 font-semibold text-zinc-900">
-            Minimize secondary waste
+            Secondary waste awareness
           </div>
           <p className="mt-2 text-sm text-zinc-600">
-            Designed to reduce sludge-heavy outcomes and avoid shifting the
-            problem into disposal.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-          <LineChart className="h-5 w-5 text-zinc-700" />
-          <div className="mt-3 font-semibold text-zinc-900">
-            Evidence before investment
-          </div>
-          <p className="mt-2 text-sm text-zinc-600">
-            Feasibility and pilot data come first — defining KPIs, operating
-            windows, and realistic outcomes.
+            Pilot evaluation includes waste streams and handling assumptions, not
+            only effluent metrics.
           </p>
         </div>
 
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
           <ShieldCheck className="h-5 w-5 text-zinc-700" />
           <div className="mt-3 font-semibold text-zinc-900">
-            Compliance-ready documentation
+            Compliance-ready framing
           </div>
           <p className="mt-2 text-sm text-zinc-600">
-            Built with monitoring and reporting in mind — to support audits,
-            permits, and regulator confidence.
+            Documentation and monitoring are part of the product, not an
+            afterthought.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
+          <LineChart className="h-5 w-5 text-zinc-700" />
+          <div className="mt-3 font-semibold text-zinc-900">
+            Evidence before scale
+          </div>
+          <p className="mt-2 text-sm text-zinc-600">
+            The pathway reduces risk for plants and partners by validating before
+            expansion.
           </p>
         </div>
       </div>
@@ -288,24 +395,22 @@ function WhyDifferent() {
   );
 }
 
-// 4) VALIDATION
 function Validation() {
   return (
     <Section
       id="validation"
-      eyebrow="Proof & validation"
-      title="Validation status"
-      subtitle="Clear milestones, no over-claiming. Technical details are shared during feasibility/pilot discussions as appropriate."
+      eyebrow="Validation"
+      title="Milestones (no over-claiming)"
+      subtitle="Clear steps and outputs. Technical details are shared during feasibility/pilot discussions as appropriate."
     >
       <div className="grid gap-5 md:grid-cols-3">
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-          <LineChart className="h-5 w-5 text-zinc-700" />
+          <ClipboardList className="h-5 w-5 text-zinc-700" />
           <div className="mt-3 font-semibold text-zinc-900">
             Milestone 1: feasibility package
           </div>
           <p className="mt-2 text-sm text-zinc-600">
-            Define site KPIs, sampling plan, and success criteria — aligned with
-            plant constraints and discharge limits.
+            KPIs, sampling plan, baseline profile, pilot success criteria.
           </p>
         </div>
 
@@ -315,39 +420,20 @@ function Validation() {
             Milestone 2: pilot / proof of concept
           </div>
           <p className="mt-2 text-sm text-zinc-600">
-            Pilot execution to verify performance stability, waste profile, and
-            operational practicality.
+            Stability, waste profile, monitoring method, operational constraints.
           </p>
         </div>
 
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-          <ShieldCheck className="h-5 w-5 text-zinc-700" />
+          <LineChart className="h-5 w-5 text-zinc-700" />
           <div className="mt-3 font-semibold text-zinc-900">
             Milestone 3: scale-up roadmap
           </div>
           <p className="mt-2 text-sm text-zinc-600">
-            Data-driven scale-up plan with integration concept, monitoring
-            approach, and cost/risk assumptions.
+            Integration plan + monitoring approach + economics assumptions.
           </p>
         </div>
       </div>
-    </Section>
-  );
-}
-
-function BusinessModel() {
-  return (
-    <Section
-      id="business"
-      eyebrow="Business model"
-      title="From feasibility to scalable implementation"
-      subtitle="A staged commercialization model designed to de-risk decisions for plants and partners."
-    >
-      <ul className="list-disc space-y-2 pl-5 text-sm text-zinc-600">
-        <li>Advisory and feasibility studies</li>
-        <li>Paid or co-funded pilot / proof-of-concept projects</li>
-        <li>System integration, licensing, or long-term service models (later)</li>
-      </ul>
     </Section>
   );
 }
@@ -356,16 +442,16 @@ function Pilot() {
   return (
     <Section
       id="pilot"
-      eyebrow="Next steps"
-      title="Pilot partners and feasibility validation"
-      subtitle="The priority is to refine the pilot framework, confirm key assumptions, and build the funding pathway."
+      eyebrow="Pilot"
+      title="Request a pilot scope template"
+      subtitle="If you run a dyeing/finishing plant or support one through an ETP, we can share a pilot scope template and discuss feasibility fit."
     >
       <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6">
-        <p className="text-sm text-zinc-700">
-          If you operate a textile dyeing/finishing site (or support one through
-          an ETP), we can share a pilot scope template and discuss fit, sampling
-          needs, and timeline.
-        </p>
+        <ul className="list-disc space-y-2 pl-5 text-sm text-zinc-700">
+          <li>What we need: basic influent/flow context + compliance target</li>
+          <li>What you get: pilot scope template + feasibility checklist</li>
+          <li>Outcome: go/no-go recommendation and next-step plan</li>
+        </ul>
       </div>
     </Section>
   );
@@ -383,8 +469,8 @@ function Contact() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Discuss feasibility or pilot collaboration"
-      subtitle="Send a short message — we’ll reply with next steps and a pilot scope template."
+      title="Contact"
+      subtitle="Send a short note. We’ll reply with next steps and a pilot scope template."
     >
       <form onSubmit={onSubmit} className="max-w-xl space-y-4">
         <input
@@ -401,7 +487,7 @@ function Contact() {
         <textarea
           required
           rows={4}
-          placeholder="Briefly describe your plant / context"
+          placeholder="Plant / context (one paragraph is enough)"
           className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
         />
         <button
@@ -412,7 +498,7 @@ function Contact() {
         </button>
         {status === "ok" && (
           <div className="text-sm text-zinc-600">
-            ✅ Message sent (demo mode). Wire this form to a service later.
+            ✅ Message sent (demo mode). We can wire this to email next.
           </div>
         )}
       </form>
@@ -432,15 +518,19 @@ function Footer() {
             <div>
               <div className="font-semibold text-zinc-900">HydroTex</div>
               <div className="text-xs text-zinc-500">
-                © {new Date().getFullYear()} • v0.1
+                Early-stage concept • Public info is high-level
               </div>
             </div>
           </div>
+          <div className="text-xs text-zinc-500">
+            © {new Date().getFullYear()} HydroTex • v0.2
+          </div>
         </div>
+
         <div className="mt-6 text-xs text-zinc-500">
-          Disclaimer: Early-stage concept. Public information is intentionally
-          high-level; technical details are shared during feasibility/pilot
-          discussions as appropriate.
+          Disclaimer: This website describes an early-stage concept. No public
+          performance guarantees are made. Technical details are shared during
+          feasibility/pilot discussions as appropriate.
         </div>
       </div>
     </footer>
@@ -454,9 +544,9 @@ export default function Page() {
       <Hero />
       <Problem />
       <Approach />
+      <Snapshot />
       <WhyDifferent />
       <Validation />
-      <BusinessModel />
       <Pilot />
       <Contact />
       <Footer />
