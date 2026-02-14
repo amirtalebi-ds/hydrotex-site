@@ -422,7 +422,7 @@ function ContactSection() {
             required
             name="message"
             rows={4}
-            placeholder="Plant / context (one paragraph is enough)"
+            placeholder="Plant / context"
             className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
           />
 
