@@ -395,11 +395,7 @@ function ContactSection() {
             <li>Regulatory pressure / discharge limits</li>
           </ul>
           <p className="pt-4">
-            Or email directly:{" "}
-            <a href="mailto:amirtalebi58@gmail.com" className="underline">
-              amirtalebi58@gmail.com
-            </a>
-          </p>
+                      </p>
         </div>
 
         <form
