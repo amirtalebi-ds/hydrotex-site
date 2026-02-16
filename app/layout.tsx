@@ -35,7 +35,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased flex flex-col min-h-screen">
+        <main className="flex-grow">
+          {children}
+        </main>
+
+        <footer className="border-t mt-16 py-8 text-sm text-center text-zinc-500">
+          <div className="space-x-6">
+            <a href="/impressum" className="hover:underline">
+              Impressum
+            </a>
+            <a href="/datenschutz" className="hover:underline">
+              Datenschutz
+            </a>
+          </div>
+          <div className="mt-4">
+            © 2026 HydroTex · Founder-led environmental technology concept
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
