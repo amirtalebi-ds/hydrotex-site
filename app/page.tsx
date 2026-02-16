@@ -481,3 +481,27 @@ export default function Page() {
     </div>
   );
 }
+{/* ================= FOOTER ================= */}
+<footer className="mt-24 border-t border-zinc-200 py-10 text-sm text-zinc-600">
+  <div className="mx-auto max-w-6xl px-6 space-y-4">
+
+    <div className="font-medium text-zinc-800">
+      HydroTex — Independent GreenTech initiative
+    </div>
+
+    <div className="flex gap-6">
+      <a href="/imprint" className="hover:text-zinc-900">
+        Imprint
+      </a>
+      <a href="/privacy" className="hover:text-zinc-900">
+        Privacy Policy
+      </a>
+    </div>
+
+    <div className="text-xs text-zinc-500">
+      © {new Date().getFullYear()} HydroTex. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
