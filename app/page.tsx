@@ -1,507 +1,650 @@
-"use client";
-
-import React, { useMemo, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
-  Shield,
-  Cpu,
-  LineChart,
+  BarChart3,
+  Beaker,
   CheckCircle2,
-  Mail,
-  Factory,
+  Download,
   Droplets,
-  Gauge,
+  Factory,
+  Leaf,
+  Linkedin,
+  Mail,
+  Recycle,
+  ShieldCheck,
+  Sparkles,
+  TrendingDown,
+  Waves
 } from "lucide-react";
+import type { CSSProperties } from "react";
+import { Reveal } from "@/components/Reveal";
 
-type Status = "idle" | "sending" | "ok" | "error";
+const impactMetrics = [
+  {
+    value: "Up to 90%",
+    label: "sludge reduction",
+    note: "Target impact pending pilot validation",
+    icon: TrendingDown
+  },
+  {
+    value: "€0.3–1.0/m³",
+    label: "target OPEX",
+    note: "Designed for cost-focused textile ETPs",
+    icon: BarChart3
+  },
+  {
+    value: "Reusable",
+    label: "bio-based solvent",
+    note: "Circular regeneration loop concept",
+    icon: Recycle
+  },
+  {
+    value: "AI-supervised",
+    label: "optimization",
+    note: "PLC-ready decision support, not black-box control",
+    icon: Sparkles
+  }
+];
 
-function cn(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
+const roadmap = [
+  "Feasibility Study",
+  "Real Wastewater Validation",
+  "Pilot Project",
+  "Commercial Deployment"
+];
+
+const opexData = [
+  { name: "Coagulation", min: 0.4, max: 1.5, color: "bg-slate-400" },
+  { name: "Activated Carbon", min: 0.5, max: 3.0, color: "bg-sky-500" },
+  { name: "Ozone/AOP", min: 1.0, max: 5.0, color: "bg-indigo-500" },
+  { name: "Membranes", min: 1.0, max: 10.0, color: "bg-cyan-700" },
+  { name: "HydroTex target", min: 0.3, max: 1.0, color: "bg-hydro-teal", highlight: true }
+];
+
+const comparison = [
+  {
+    technology: "Coagulation",
+    strength: "Low CAPEX and familiar operation",
+    limitation: "High chemical demand and wet sludge generation",
+    hydrotex: "Targets lower waste burden through extraction and regeneration"
+  },
+  {
+    technology: "Activated Carbon",
+    strength: "Strong color removal",
+    limitation: "Spent media replacement or regeneration cost",
+    hydrotex: "Designed around a reusable solvent loop"
+  },
+  {
+    technology: "Ozone/AOP",
+    strength: "High decolorization potential",
+    limitation: "Energy and oxidant cost can be significant",
+    hydrotex: "Targets moderate energy use and lower consumable burden"
+  },
+  {
+    technology: "Membranes",
+    strength: "Excellent polishing and reuse potential",
+    limitation: "Fouling, concentrate management, and high CAPEX",
+    hydrotex: "Positioned as a retrofit pathway before high-CAPEX reuse systems"
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.hydrotex.eu/#organization",
+      name: "HydroTex",
+      url: "https://www.hydrotex.eu",
+      email: "contact@hydrotex.eu",
+      founder: {
+        "@id": "https://www.hydrotex.eu/#founder"
+      },
+      sameAs: ["https://de.linkedin.com/in/amirtalebienvtech"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hydrotex.eu/#founder",
+      name: "Dr. Amir Talebi",
+      jobTitle: "Environmental Technology Researcher & Founder",
+      description: "PhD in Environmental Technology and founder of HydroTex.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Freiburg",
+        addressCountry: "DE"
+      },
+      sameAs: ["https://de.linkedin.com/in/amirtalebienvtech"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hydrotex.eu/#website",
+      url: "https://www.hydrotex.eu",
+      name: "HydroTex",
+      publisher: {
+        "@id": "https://www.hydrotex.eu/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.hydrotex.eu/#service",
+      name: "Solvent-Based Textile Wastewater Treatment Validation",
+      provider: {
+        "@id": "https://www.hydrotex.eu/#organization"
+      },
+      areaServed: ["Germany", "Malaysia", "Southeast Asia", "European Union"],
+      serviceType: "Industrial textile wastewater treatment validation and pilot development",
+      description:
+        "HydroTex develops solvent-based textile wastewater treatment for sludge reduction, water recovery, circular solvent regeneration, and pilot validation."
+    }
+  ]
+};
+
+export default function Home() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <main>
+        <Header />
+        <Hero />
+        <Impact />
+        <Technology />
+        <Roadmap />
+        <OpexChart />
+        <CompetitiveComparison />
+        <Founder />
+        <Downloads />
+        <ContactFooter />
+      </main>
+    </>
+  );
 }
 
-function Section(props: {
-  id?: string;
-  eyebrow?: string;
-  title: string;
-  subtitle?: string;
-  children: React.ReactNode;
-}) {
-  const { id, eyebrow, title, subtitle, children } = props;
+function Header() {
   return (
-    <section id={id} className="scroll-mt-24 py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl">
-          {eyebrow ? (
-            <div className="text-xs font-semibold tracking-widest text-zinc-500">
-              {eyebrow.toUpperCase()}
-            </div>
-          ) : null}
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
-            {title}
-          </h2>
-          {subtitle ? (
-            <p className="mt-4 text-base leading-relaxed text-zinc-600">
-              {subtitle}
-            </p>
-          ) : null}
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-white/78 backdrop-blur-xl">
+      <nav className="section-shell flex h-16 items-center justify-between">
+        <Link href="#top" className="flex items-center gap-3" aria-label="HydroTex home">
+          <span className="flex size-9 items-center justify-center rounded-full bg-hydro-teal text-white">
+            <Waves size={19} strokeWidth={2.4} />
+          </span>
+          <span className="text-lg font-semibold text-hydro-ink">HydroTex</span>
+        </Link>
+        <div className="hidden items-center gap-6 text-sm font-medium text-hydro-slate md:flex">
+          <Link href="#impact" className="transition hover:text-hydro-teal">
+            Impact
+          </Link>
+          <Link href="#roadmap" className="transition hover:text-hydro-teal">
+            Roadmap
+          </Link>
+          <Link href="#comparison" className="transition hover:text-hydro-teal">
+            Comparison
+          </Link>
+          <Link href="#founder" className="transition hover:text-hydro-teal">
+            Founder
+          </Link>
         </div>
+        <Link href="#contact" className="btn-secondary hidden py-2.5 sm:inline-flex">
+          Contact Us
+        </Link>
+      </nav>
+    </header>
+  );
+}
 
-        <div className="mt-10">{children}</div>
+function Hero() {
+  return (
+    <section id="top" className="relative min-h-[88vh] overflow-hidden pt-16">
+      <Image
+        src="/images/hero-technical.png"
+        alt="HydroTex textile wastewater treatment process illustration"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-hydro-paper via-hydro-paper/88 to-hydro-paper/38" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(75,182,183,0.22),transparent_32%),radial-gradient(circle_at_15%_85%,rgba(15,139,120,0.16),transparent_34%)]" />
+      <div className="section-shell relative flex min-h-[calc(88vh-4rem)] items-center py-20 sm:py-24">
+        <div className="max-w-3xl">
+          <p className="eyebrow">Textile wastewater • sludge reduction • water recovery</p>
+          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.04] text-hydro-ink sm:text-5xl lg:text-6xl">
+            Solvent-Based Textile Wastewater Treatment for Sludge Reduction and Water Recovery
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-hydro-slate sm:text-xl">
+            HydroTex is developing a modular extraction and regeneration platform
+            for dye-rich textile wastewater, targeting lower operating costs,
+            circular solvent reuse, and pilot-ready industrial validation.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="#technology" className="btn-primary">
+              Explore the Technology <ArrowRight size={18} />
+            </Link>
+            <Link href="#contact" className="btn-secondary">
+              Contact Us <Mail size={18} />
+            </Link>
+          </div>
+          <div className="mt-10 grid max-w-2xl grid-cols-1 gap-3 text-sm text-hydro-slate sm:grid-cols-3">
+            {["Feasibility-first", "Real wastewater validation", "Commercial pilot pathway"].map(
+              (item) => (
+                <div key={item} className="flex items-center gap-2">
+                  <CheckCircle2 className="shrink-0 text-hydro-teal" size={18} />
+                  <span>{item}</span>
+                </div>
+              )
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-function Pill(props: { children: React.ReactNode }) {
+function Impact() {
   return (
-    <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-600">
-      {props.children}
-    </span>
+    <Reveal id="impact" className="bg-white py-20 sm:py-24">
+      <div className="section-shell">
+        <p className="eyebrow">Impact targets</p>
+        <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
+          <div>
+            <h2 className="section-title">Environmental and economic benefits, stated clearly.</h2>
+            <p className="section-copy">
+              HydroTex is built around measurable outcomes that matter to
+              investors, grant evaluators, and industrial partners: lower sludge
+              burden, lower target treatment cost, circular chemistry, and
+              traceable process control.
+            </p>
+          </div>
+          <p className="max-w-sm text-sm leading-6 text-hydro-slate">
+            Figures are target values for validation and should be confirmed
+            through real wastewater testing and pilot operation.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {impactMetrics.map(({ value, label, note, icon: Icon }) => (
+            <article key={label} className="metric-card">
+              <Icon className="text-hydro-teal" size={24} />
+              <p className="mt-5 text-3xl font-semibold text-hydro-ink">{value}</p>
+              <h3 className="mt-2 text-base font-semibold text-hydro-blue">{label}</h3>
+              <p className="mt-3 text-sm leading-6 text-hydro-slate">{note}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </Reveal>
   );
 }
 
-function Card(props: {
-  title: string;
-  icon?: React.ReactNode;
-  children: React.ReactNode;
-}) {
+function Technology() {
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-      <div className="flex items-start gap-3">
-        {props.icon ? (
-          <div className="mt-0.5 rounded-xl border border-zinc-200 bg-white p-2">
-            {props.icon}
-          </div>
-        ) : null}
+    <Reveal id="technology" className="py-20 sm:py-24">
+      <div className="section-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>
-          <div className="text-sm font-semibold text-zinc-900">{props.title}</div>
-          <div className="mt-2 text-sm leading-relaxed text-zinc-600">
-            {props.children}
+          <p className="eyebrow">Technology concept</p>
+          <h2 className="section-title">A circular solvent loop for dye-rich textile effluent.</h2>
+          <p className="section-copy">
+            HydroTex is designed as a modular retrofit pathway for dyeing and
+            finishing plants. The system transfers dyes from wastewater into a
+            reusable organic phase, regenerates the solvent, and concentrates
+            contaminants into a smaller waste stream.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["Extraction", "Targeted dye transfer from wastewater into a reusable solvent phase."],
+              ["Regeneration", "Solvent loop designed for repeated reuse and lower consumable demand."],
+              ["Waste reduction", "Aim to replace bulky sludge with a smaller concentrated output."],
+              ["Industrial control", "PLC-ready automation with optional AI-supervised optimization."]
+            ].map(([title, text]) => (
+              <div key={title} className="rounded-[8px] border border-hydro-line bg-white p-5">
+                <h3 className="font-semibold text-hydro-ink">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-hydro-slate">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="rounded-[8px] border border-hydro-line bg-white p-4 shadow-soft">
+          <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
+            <ProcessNode icon={Factory} title="Textile effluent" text="Colored wastewater" />
+            <ArrowRight className="mx-auto hidden text-hydro-aqua sm:block" />
+            <ProcessNode icon={Beaker} title="HydroTex module" text="Extraction + regeneration" featured />
+            <ArrowRight className="mx-auto hidden text-hydro-aqua sm:block" />
+            <ProcessNode icon={Droplets} title="Recovered water" text="Lower color load" />
+          </div>
+          <div className="mt-4 rounded-[8px] bg-hydro-mint p-4 text-sm leading-6 text-hydro-slate">
+            <strong className="text-hydro-ink">Validation focus:</strong> residual solvent,
+            solvent loss per m³, phase separation, secondary waste handling,
+            COD impact, and stable repeated regeneration cycles.
           </div>
         </div>
       </div>
+    </Reveal>
+  );
+}
+
+function ProcessNode({
+  icon: Icon,
+  title,
+  text,
+  featured = false
+}: {
+  icon: typeof Factory;
+  title: string;
+  text: string;
+  featured?: boolean;
+}) {
+  return (
+    <div
+      className={`rounded-[8px] border p-5 text-center ${
+        featured
+          ? "border-hydro-teal bg-hydro-paper"
+          : "border-hydro-line bg-white"
+      }`}
+    >
+      <Icon className="mx-auto text-hydro-teal" size={28} />
+      <h3 className="mt-4 font-semibold text-hydro-ink">{title}</h3>
+      <p className="mt-1 text-sm text-hydro-slate">{text}</p>
     </div>
   );
 }
 
-export default function Page() {
-  const formspreeEndpoint = "https://formspree.io/f/mgolaaag";
-
-  const [status, setStatus] = useState<Status>("idle");
-  const [errorMsg, setErrorMsg] = useState<string>("");
-
-  const nav = useMemo(
-    () => [
-      { href: "#why-now", label: "Why now" },
-      { href: "#solution", label: "Solution" },
-      { href: "#ai", label: "AI" },
-      { href: "#for-who", label: "For who" },
-      { href: "#pilot", label: "Pilot" },
-      { href: "#contact", label: "Contact" },
-    ],
-    []
-  );
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sending");
-    setErrorMsg("");
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const res = await fetch(formspreeEndpoint, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData,
-      });
-
-      if (res.ok) {
-        setStatus("ok");
-        form.reset();
-        return;
-      }
-
-      const data = await res.json().catch(() => null);
-      setStatus("error");
-      setErrorMsg(
-        data?.errors?.[0]?.message ||
-          "Something went wrong. Please try again or email contact@hydrotex.eu."
-      );
-    } catch {
-      setStatus("error");
-      setErrorMsg("Network error. Please try again or email contact@hydrotex.eu.");
-    }
-  }
-
+function Roadmap() {
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-900 text-white">
-              <Droplets className="h-5 w-5" />
-            </div>
-            <div className="leading-tight">
-              <div className="text-sm font-semibold">HydroTex</div>
-              <div className="text-xs text-zinc-500">
-                Textile wastewater • Feasibility → Pilot
-              </div>
-            </div>
-          </div>
-
-          <nav className="hidden items-center gap-6 md:flex">
-            {nav.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                className="text-sm text-zinc-600 hover:text-zinc-900"
-              >
-                {n.label}
-              </a>
-            ))}
-          </nav>
-
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
-          >
-            Request pilot scope <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
-      </header>
-
-      {/* Hero */}
-      <main>
-        <section className="py-14 sm:py-20">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 md:grid-cols-2 md:items-center">
-            <div>
-              <div className="flex flex-wrap gap-2">
-                <Pill>Sludge minimization focus</Pill>
-                <Pill>Compliance-first</Pill>
-                <Pill>Feasibility → Pilot</Pill>
-              </div>
-
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">
-                Cut sludge burden.
-                <br />
-                Reduce compliance risk.
-                <span className="block text-zinc-500">
-                  A clearer path to textile wastewater upgrades.
+    <Reveal id="roadmap" className="bg-white py-20 sm:py-24">
+      <div className="section-shell">
+        <p className="eyebrow">Validation roadmap</p>
+        <h2 className="section-title">From feasibility to commercial deployment.</h2>
+        <p className="section-copy">
+          The roadmap is intentionally staged. Each phase reduces technical,
+          economic, and customer-adoption risk before major capital is committed.
+        </p>
+        <div className="mt-12 grid gap-5 lg:grid-cols-4">
+          {roadmap.map((item, index) => (
+            <div key={item} className="relative rounded-[8px] border border-hydro-line bg-hydro-paper p-5">
+              <div className="flex items-center justify-between gap-3">
+                <span className="flex size-10 items-center justify-center rounded-full bg-hydro-teal text-sm font-semibold text-white">
+                  {index + 1}
                 </span>
-              </h1>
-
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-600">
-                HydroTex helps dyeing and finishing plants evaluate and validate a
-                sludge-minimizing treatment approach through a structured
-                feasibility → pilot pathway. The outcome is a practical
-                recommendation and a de-risked route to implementation.
+                {index < roadmap.length - 1 ? (
+                  <ArrowRight className="hidden text-hydro-aqua lg:block" size={22} />
+                ) : null}
+              </div>
+              <h3 className="mt-5 text-lg font-semibold text-hydro-ink">{item}</h3>
+              <p className="mt-3 text-sm leading-6 text-hydro-slate">
+                {[
+                  "Define samples, KPIs, safety requirements, and techno-economic assumptions.",
+                  "Test real textile wastewater for color removal, solvent loss, and phase separation.",
+                  "Operate a customer-relevant pilot with decision gates and cost evidence.",
+                  "Deploy modular units after performance, EHS, and economics are validated."
+                ][index]}
               </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
-                >
-                  Request pilot scope <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="#pilot"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white px-5 py-3 text-sm font-medium text-zinc-900 hover:bg-zinc-50"
-                >
-                  See pilot pathway
-                </a>
-              </div>
-
-              <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <Card title="Primary value" icon={<Shield className="h-4 w-4" />}>
-                  Lower sludge exposure and clearer compliance planning.
-                </Card>
-                <Card title="Decision outcome" icon={<CheckCircle2 className="h-4 w-4" />}>
-                  Go / No-go clarity based on site data and constraints.
-                </Card>
-                <Card title="First step" icon={<Mail className="h-4 w-4" />}>
-                  A pilot scope template and feasibility checklist.
-                </Card>
-              </div>
             </div>
+          ))}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
 
-            <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-              <div className="text-sm font-semibold text-zinc-900">
-                Commercial focus
-              </div>
-              <ul className="mt-4 space-y-3 text-sm text-zinc-600">
-                <li className="flex gap-2">
-                  <Factory className="mt-0.5 h-4 w-4 text-zinc-500" />
-                  Small–medium dyeing & finishing plants
-                </li>
-                <li className="flex gap-2">
-                  <Shield className="mt-0.5 h-4 w-4 text-zinc-500" />
-                  Plants with sludge/disposal and compliance pressure
-                </li>
-                <li className="flex gap-2">
-                  <Gauge className="mt-0.5 h-4 w-4 text-zinc-500" />
-                  ETP operators and environmental managers
-                </li>
-              </ul>
-
-              <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-sm text-zinc-700">
-                <span className="font-semibold">What you receive:</span> a feasibility
-                checklist + pilot scope template + a clear next-step plan.
-              </div>
-
-              <div className="mt-6 text-xs text-zinc-500">
-                Founder-led environmental technology concept.
-              </div>
-            </div>
+function OpexChart() {
+  const maxScale = 10;
+  return (
+    <Reveal className="py-20 sm:py-24">
+      <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div>
+          <p className="eyebrow">Competitive OPEX</p>
+          <h2 className="section-title">A target cost range designed to compete with established treatments.</h2>
+          <p className="section-copy">
+            HydroTex is positioned against the treatment options already known
+            to textile mills. The target OPEX range is attractive, but it must
+            be validated with real wastewater, solvent-loss data, and pilot
+            operating evidence.
+          </p>
+        </div>
+        <div className="rounded-[8px] border border-hydro-line bg-white p-5 shadow-soft">
+          <div className="flex items-center justify-between gap-4 border-b border-hydro-line pb-4">
+            <h3 className="font-semibold text-hydro-ink">Operating cost comparison</h3>
+            <span className="text-sm text-hydro-slate">€/m³</span>
           </div>
-        </section>
-
-        {/* WHY NOW */}
-        <Section
-          id="why-now"
-          eyebrow="Context"
-          title="Upgrades are accelerating — and sludge is still the bottleneck."
-          subtitle="Textile ETPs face tighter discharge expectations, variable influent loads, and rising disposal complexity. A feasibility-first pathway reduces wasted time and budget."
-        >
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            <Card title="Compliance pressure" icon={<Shield className="h-4 w-4" />}>
-              Clear, documented decision-making improves stakeholder alignment and
-              reduces compliance surprises.
-            </Card>
-            <Card title="Operational variability" icon={<LineChart className="h-4 w-4" />}>
-              Dye chemistry, flow swings, and process changes demand adaptable
-              treatment logic.
-            </Card>
-            <Card title="Sludge cost & risk" icon={<Droplets className="h-4 w-4" />}>
-              Sludge handling is often where costs and secondary impacts concentrate.
-            </Card>
-          </div>
-        </Section>
-
-        {/* SOLUTION */}
-        <Section
-          id="solution"
-          eyebrow="Solution"
-          title="A structured feasibility → pilot pathway."
-          subtitle="We start with what you already have: plant constraints, ETP layout, discharge targets, and a manageable data plan."
-        >
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            <Card title="1) Feasibility check" icon={<CheckCircle2 className="h-4 w-4" />}>
-              Define objectives, constraints, and success metrics. Identify quick
-              wins and key risks early.
-            </Card>
-            <Card title="2) Bench / validation plan" icon={<Gauge className="h-4 w-4" />}>
-              Targeted testing to confirm separation and operability — not a long
-              academic program.
-            </Card>
-            <Card title="3) Pilot scope" icon={<Factory className="h-4 w-4" />}>
-              A clear pilot outline: instrumentation, safety interlocks, sampling,
-              and decision gates.
-            </Card>
-          </div>
-        </Section>
-
-        {/* AI SECTION (NEW) */}
-        <Section
-          id="ai"
-          eyebrow="AI-enabled"
-          title="AI-supervised process optimization — designed for industrial reality."
-          subtitle="HydroTex is developing a PLC-ready control concept that combines a digital twin with a lightweight ML-based separation advisor and safety interlocks."
-        >
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            <Card title="3-layer architecture" icon={<Cpu className="h-4 w-4" />}>
-              <div className="space-y-2">
-                <div>
-                  <span className="font-semibold text-zinc-900">Layer 1:</span>{" "}
-                  Instrumentation & safeguards (sensors, alarms, interlocks).
-                </div>
-                <div>
-                  <span className="font-semibold text-zinc-900">Layer 2:</span>{" "}
-                  PLC control logic (stable operation, fallback modes).
-                </div>
-                <div>
-                  <span className="font-semibold text-zinc-900">Layer 3:</span>{" "}
-                  Digital twin + ML advisor (recommendations, not blind control).
-                </div>
-              </div>
-            </Card>
-
-            <Card title="Decision support (not hype)" icon={<LineChart className="h-4 w-4" />}>
-              The ML layer proposes operating adjustments (e.g., setpoints, flow
-              windows, phase management) while the PLC maintains safe, bounded
-              control.
-            </Card>
-
-            <Card title="Safety & auditability" icon={<Shield className="h-4 w-4" />}>
-              Recommendations are constrained by safety rules, logged for review,
-              and tied to pilot decision gates — supporting traceable compliance
-              discussions.
-            </Card>
-          </div>
-
-          <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5 text-sm text-zinc-700">
-            <span className="font-semibold">Positioning:</span> AI-supervised circular
-            platform concept — feasibility-first, with PLC-ready architecture and
-            pilot-grade documentation.
-          </div>
-        </Section>
-
-        {/* FOR WHO */}
-        <Section
-          id="for-who"
-          eyebrow="Fit"
-          title="Who this is for"
-          subtitle="A good fit when you need a practical pathway, not a black-box promise."
-        >
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            <Card title="ETP operators" icon={<Factory className="h-4 w-4" />}>
-              Improve stability, reduce operational pain, and document upgrades.
-            </Card>
-            <Card title="Environmental managers" icon={<Shield className="h-4 w-4" />}>
-              Reduce compliance risk with a traceable plan and decision points.
-            </Card>
-            <Card title="Plant leadership" icon={<CheckCircle2 className="h-4 w-4" />}>
-              Get a clear go/no-go view and a scoped pilot before major spend.
-            </Card>
-          </div>
-        </Section>
-
-        {/* PILOT */}
-        <Section
-          id="pilot"
-          eyebrow="Pilot"
-          title="Pilot partnership: scope, validate, decide."
-          subtitle="A pilot should answer a small number of critical questions quickly: performance, operability, safety, and total cost implications."
-        >
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <Card title="Pilot deliverables" icon={<CheckCircle2 className="h-4 w-4" />}>
-              Pilot scope template, instrumentation plan, sampling plan, decision
-              gates, and a de-risked implementation path.
-            </Card>
-            <Card title="Pilot principles" icon={<Shield className="h-4 w-4" />}>
-              Safety-first control philosophy, bounded automation, clear failure
-              modes, and measurable success criteria.
-            </Card>
-          </div>
-        </Section>
-
-        {/* CONTACT */}
-        <Section
-          id="contact"
-          eyebrow="Contact"
-          title="Request pilot scope"
-          subtitle="Share basic plant information and we’ll respond with a feasibility checklist and pilot outline."
-        >
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
-            <div className="text-sm text-zinc-700">
-              <p className="text-zinc-600">
-                HydroTex focuses on feasibility-first wastewater upgrades.
-              </p>
-
-              <p className="mt-6 font-semibold text-zinc-900">
-                Initial discussion typically covers:
-              </p>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-600">
-                <li>Plant size & process type</li>
-                <li>Current ETP setup</li>
-                <li>Sludge handling challenges</li>
-                <li>Regulatory pressure / discharge limits</li>
-              </ul>
-
-              <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 text-zinc-600">
-                Prefer email? Write to{" "}
-                <a
-                  className="font-medium text-zinc-900 underline underline-offset-4"
-                  href="mailto:contact@hydrotex.eu"
-                >
-                  contact@hydrotex.eu
-                </a>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-              <form onSubmit={onSubmit} className="space-y-4">
-                <input
-                  required
-                  name="name"
-                  placeholder="Name"
-                  className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-                />
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-                />
-                <textarea
-                  required
-                  name="message"
-                  rows={5}
-                  placeholder="Plant / context"
-                  className="w-full rounded-xl border border-zinc-200 px-4 py-2 text-sm outline-none focus:border-zinc-400"
-                />
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className={cn(
-                    "inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-zinc-800",
-                    status === "sending" && "opacity-60"
-                  )}
-                >
-                  <Mail className="h-4 w-4" />
-                  {status === "sending" ? "Sending..." : "Send message"}
-                </button>
-
-                {status === "ok" && (
-                  <div className="text-sm text-zinc-600">
-                    <span className="inline-flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4" />
-                      Message sent. We’ll reply via email.
+          <div className="mt-6 space-y-5" aria-label="Operating cost range bar chart">
+            {opexData.map((item) => {
+              const left = (item.min / maxScale) * 100;
+              const width = ((item.max - item.min) / maxScale) * 100;
+              return (
+                <div key={item.name} className={item.highlight ? "rounded-[8px] bg-hydro-mint p-3" : ""}>
+                  <div className="mb-2 flex items-center justify-between gap-3 text-sm">
+                    <span className="font-medium text-hydro-ink">{item.name}</span>
+                    <span className="text-hydro-slate">
+                      {item.min.toFixed(1)}–{item.max.toFixed(1)}
                     </span>
                   </div>
-                )}
-
-                {status === "error" && (
-                  <div className="text-sm text-red-600">{errorMsg}</div>
-                )}
-              </form>
-            </div>
+                  <div className="relative h-4 rounded-full bg-slate-100">
+                    <div
+                      className={`absolute top-0 h-4 rounded-full ${item.color}`}
+                      style={{ left: `${left}%`, width: `${width}%` } as CSSProperties}
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        </Section>
-
-        {/* Footer */}
-        <footer className="border-t border-zinc-200 bg-white">
-          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-            <div className="text-sm text-zinc-500">
-              © {new Date().getFullYear()} HydroTex • Independent GreenTech initiative
-            </div>
-            <div className="flex gap-5 text-sm">
-              <a
-                href="/impressum"
-                className="text-zinc-600 hover:text-zinc-900"
-              >
-                Legal / Impressum
-              </a>
-              <a
-                href="/datenschutz"
-                className="text-zinc-600 hover:text-zinc-900"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="mailto:contact@hydrotex.eu"
-                className="text-zinc-600 hover:text-zinc-900"
-              >
-                contact@hydrotex.eu
-              </a>
-            </div>
+          <div className="mt-5 flex justify-between text-xs text-hydro-slate">
+            <span>0</span>
+            <span>2.5</span>
+            <span>5.0</span>
+            <span>7.5</span>
+            <span>10.0</span>
           </div>
-        </footer>
-      </main>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function CompetitiveComparison() {
+  return (
+    <Reveal id="comparison" className="bg-white py-20 sm:py-24">
+      <div className="section-shell">
+        <p className="eyebrow">Competitive comparison</p>
+        <h2 className="section-title">Not another black-box treatment promise.</h2>
+        <p className="section-copy">
+          HydroTex should be evaluated against the technologies mills already
+          consider. The differentiation is not simply color removal; it is the
+          potential to reduce sludge, regenerate process chemistry, and provide
+          a lower-cost retrofit path.
+        </p>
+        <div className="mt-10 overflow-hidden rounded-[8px] border border-hydro-line bg-white shadow-sm">
+          <div className="hidden grid-cols-[1fr_1.25fr_1.25fr_1.35fr] bg-hydro-paper text-sm font-semibold text-hydro-ink md:grid">
+            <div className="border-r border-hydro-line p-4">Technology</div>
+            <div className="border-r border-hydro-line p-4">Why it is used</div>
+            <div className="border-r border-hydro-line p-4">Key limitation</div>
+            <div className="p-4">HydroTex positioning</div>
+          </div>
+          {comparison.map((row) => (
+            <div
+              key={row.technology}
+              className="grid gap-0 border-t border-hydro-line md:grid-cols-[1fr_1.25fr_1.25fr_1.35fr]"
+            >
+              <ComparisonCell label="Technology" value={row.technology} strong />
+              <ComparisonCell label="Why it is used" value={row.strength} />
+              <ComparisonCell label="Key limitation" value={row.limitation} />
+              <ComparisonCell label="HydroTex positioning" value={row.hydrotex} accent />
+            </div>
+          ))}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function ComparisonCell({
+  label,
+  value,
+  strong = false,
+  accent = false
+}: {
+  label: string;
+  value: string;
+  strong?: boolean;
+  accent?: boolean;
+}) {
+  return (
+    <div className="border-hydro-line p-4 text-sm leading-6 md:border-r md:last:border-r-0">
+      <span className="mb-1 block text-xs font-semibold uppercase tracking-[0.14em] text-hydro-teal md:hidden">
+        {label}
+      </span>
+      <span className={`${strong ? "font-semibold text-hydro-ink" : ""} ${accent ? "text-hydro-teal" : "text-hydro-slate"}`}>
+        {value}
+      </span>
     </div>
+  );
+}
+
+function Founder() {
+  return (
+    <Reveal id="founder" className="py-20 sm:py-24">
+      <div className="section-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+        <div className="rounded-[8px] border border-hydro-line bg-white p-6 shadow-soft">
+          <div className="flex size-16 items-center justify-center rounded-full bg-hydro-mint text-2xl font-semibold text-hydro-teal">
+            AT
+          </div>
+          <h2 className="mt-6 text-2xl font-semibold text-hydro-ink">Dr. Amir Talebi</h2>
+          <p className="mt-2 text-hydro-blue">Environmental Technology Researcher & Founder</p>
+          <p className="mt-1 text-sm text-hydro-slate">PhD in Environmental Technology</p>
+          <div className="mt-6 flex gap-3">
+            <a
+              href="https://de.linkedin.com/in/amirtalebienvtech"
+              className="btn-secondary py-2.5"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Linkedin size={17} /> LinkedIn
+            </a>
+            <a href="mailto:contact@hydrotex.eu" className="btn-secondary py-2.5">
+              <Mail size={17} /> Email
+            </a>
+          </div>
+        </div>
+        <div>
+          <p className="eyebrow">Founder profile</p>
+          <h2 className="section-title">Technical depth with a validation-first commercialization path.</h2>
+          <p className="section-copy">
+            HydroTex is founder-led by Dr. Amir Talebi, combining environmental
+            technology research with a practical focus on wastewater treatment,
+            industrial feasibility, and pilot planning. The current priority is
+            to convert proof-of-concept chemistry into real wastewater evidence,
+            customer discovery, and partner-ready pilot documentation.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              [ShieldCheck, "Compliance-ready thinking"],
+              [Leaf, "Sustainability-driven design"],
+              [Factory, "Industrial partner focus"]
+            ].map(([Icon, label]) => {
+              const TypedIcon = Icon as typeof ShieldCheck;
+              return (
+                <div key={label as string} className="rounded-[8px] border border-hydro-line bg-white p-4">
+                  <TypedIcon className="text-hydro-teal" size={22} />
+                  <p className="mt-3 text-sm font-medium text-hydro-ink">{label as string}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function Downloads() {
+  return (
+    <Reveal id="downloads" className="bg-white py-20 sm:py-24">
+      <div className="section-shell">
+        <div className="rounded-[8px] border border-hydro-line bg-hydro-paper p-6 sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
+          <div>
+            <p className="eyebrow">Downloads</p>
+            <h2 className="mt-3 text-3xl font-semibold text-hydro-ink">Investor and partner materials.</h2>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-hydro-slate">
+              Review the business model validation memo or share the one-page
+              overview with grant evaluators, textile mills, and industrial
+              partners.
+            </p>
+          </div>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-0">
+            <a href="/downloads/hydrotex-business-plan.docx" download className="btn-primary">
+              <Download size={18} /> Business Plan
+            </a>
+            <a href="/downloads/hydrotex-one-pager.pdf" download className="btn-secondary bg-white">
+              <Download size={18} /> One-Pager
+            </a>
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function ContactFooter() {
+  return (
+    <footer id="contact" className="border-t border-hydro-line bg-hydro-ink text-white">
+      <div className="section-shell py-14">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
+          <div>
+            <h2 className="text-2xl font-semibold">HydroTex</h2>
+            <p className="mt-4 max-w-xl text-sm leading-6 text-white/72">
+              Solvent-based textile wastewater treatment concept for sludge
+              reduction, water recovery, circular solvent regeneration, and
+              pilot-ready industrial validation.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="mailto:contact@hydrotex.eu" className="btn-primary bg-white text-hydro-ink hover:bg-hydro-mint">
+                <Mail size={18} /> contact@hydrotex.eu
+              </a>
+              <a
+                href="https://de.linkedin.com/in/amirtalebienvtech"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary border-white/20 bg-white/8 text-white hover:border-white/50 hover:text-white"
+              >
+                <Linkedin size={18} /> LinkedIn
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-semibold">Explore</h3>
+            <div className="mt-4 grid gap-3 text-sm text-white/72">
+              <Link href="#technology" className="hover:text-white">
+                Technology
+              </Link>
+              <Link href="#impact" className="hover:text-white">
+                Impact
+              </Link>
+              <Link href="#roadmap" className="hover:text-white">
+                Validation Roadmap
+              </Link>
+              <Link href="#downloads" className="hover:text-white">
+                Downloads
+              </Link>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-semibold">Legal</h3>
+            <div className="mt-4 grid gap-3 text-sm text-white/72">
+              <Link href="/imprint" className="hover:text-white">
+                Imprint
+              </Link>
+              <Link href="/privacy" className="hover:text-white">
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="mt-10 border-t border-white/12 pt-6 text-sm text-white/56">
+          © {new Date().getFullYear()} HydroTex. Freiburg, Germany.
+        </div>
+      </div>
+    </footer>
   );
 }
