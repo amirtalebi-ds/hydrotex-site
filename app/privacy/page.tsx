@@ -20,9 +20,9 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">Overview</h2>
               <p className="mt-2">
-                This website provides information about HydroTex and links to
-                downloadable materials. The site is designed to be lightweight
-                and does not require user accounts.
+                This website provides information about HydroTex and provides
+                contact-based access to partner materials. The site is designed
+                to be lightweight and does not require user accounts.
               </p>
             </section>
             <section>

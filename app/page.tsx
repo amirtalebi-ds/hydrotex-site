@@ -1,11 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
   BarChart3,
   Beaker,
   CheckCircle2,
-  Download,
   Droplets,
   Factory,
   Leaf,
@@ -156,7 +154,7 @@ export default function Home() {
         <OpexChart />
         <CompetitiveComparison />
         <Founder />
-        <Downloads />
+        <Materials />
         <ContactFooter />
       </main>
     </>
@@ -197,17 +195,37 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative min-h-[88vh] overflow-hidden pt-16">
-      <Image
-        src="/images/hero-technical.png"
-        alt="HydroTex textile wastewater treatment process illustration"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-hydro-paper via-hydro-paper/88 to-hydro-paper/38" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(75,182,183,0.22),transparent_32%),radial-gradient(circle_at_15%_85%,rgba(15,139,120,0.16),transparent_34%)]" />
+    <section
+      id="top"
+      className="relative min-h-[88vh] overflow-hidden bg-[linear-gradient(135deg,#F7FBFA_0%,#EAF8F6_48%,#DDF2F3_100%)] pt-16"
+    >
+      <div className="absolute inset-0 opacity-[0.42]">
+        <svg
+          className="h-full w-full"
+          viewBox="0 0 1440 900"
+          preserveAspectRatio="none"
+          role="presentation"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="waveStroke" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0%" stopColor="#4BB6B7" stopOpacity="0.04" />
+              <stop offset="48%" stopColor="#0F8B78" stopOpacity="0.18" />
+              <stop offset="100%" stopColor="#166A8F" stopOpacity="0.08" />
+            </linearGradient>
+          </defs>
+          {[160, 230, 300, 370, 440, 510, 580, 650, 720].map((y, index) => (
+            <path
+              key={y}
+              d={`M -120 ${y} C 150 ${y - 55}, 300 ${y + 55}, 560 ${y} S 980 ${y - 55}, 1560 ${y + 18}`}
+              fill="none"
+              stroke="url(#waveStroke)"
+              strokeWidth={index % 3 === 0 ? 2.2 : 1.4}
+            />
+          ))}
+        </svg>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-hydro-paper/80 to-transparent" />
       <div className="section-shell relative flex min-h-[calc(88vh-4rem)] items-center py-20 sm:py-24">
         <div className="max-w-3xl">
           <p className="eyebrow">Textile wastewater • sludge reduction • water recovery</p>
@@ -558,26 +576,32 @@ function Founder() {
   );
 }
 
-function Downloads() {
+function Materials() {
   return (
-    <Reveal id="downloads" className="bg-white py-20 sm:py-24">
+    <Reveal id="materials" className="bg-white py-20 sm:py-24">
       <div className="section-shell">
         <div className="rounded-[8px] border border-hydro-line bg-hydro-paper p-6 sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
           <div>
-            <p className="eyebrow">Downloads</p>
-            <h2 className="mt-3 text-3xl font-semibold text-hydro-ink">Investor and partner materials.</h2>
+            <p className="eyebrow">Request materials</p>
+            <h2 className="mt-3 text-3xl font-semibold text-hydro-ink">Investor and partner materials by request.</h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-hydro-slate">
-              Review the business model validation memo or share the one-page
-              overview with grant evaluators, textile mills, and industrial
-              partners.
+              Detailed business planning, financial assumptions, and partner
+              materials are shared through direct contact only. This keeps
+              sensitive early-stage information off the public website.
             </p>
           </div>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-0">
-            <a href="/downloads/hydrotex-business-plan.docx" download className="btn-primary">
-              <Download size={18} /> Business Plan
+            <a
+              href="mailto:contact@hydrotex.eu?subject=Request%20HydroTex%20Business%20Plan"
+              className="btn-primary"
+            >
+              <Mail size={18} /> Request Business Plan
             </a>
-            <a href="/downloads/hydrotex-one-pager.pdf" download className="btn-secondary bg-white">
-              <Download size={18} /> One-Pager
+            <a
+              href="mailto:contact@hydrotex.eu?subject=Request%20HydroTex%20One-Pager"
+              className="btn-secondary bg-white"
+            >
+              <Mail size={18} /> Request One-Pager
             </a>
           </div>
         </div>
@@ -624,8 +648,8 @@ function ContactFooter() {
               <Link href="#roadmap" className="hover:text-white">
                 Validation Roadmap
               </Link>
-              <Link href="#downloads" className="hover:text-white">
-                Downloads
+              <Link href="#materials" className="hover:text-white">
+                Request Materials
               </Link>
             </div>
           </div>
