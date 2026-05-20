@@ -1,0 +1,29 @@
+export default function Imprint() {
+  return (
+    <main className="mx-auto max-w-4xl px-6 py-16 text-sm text-zinc-700 space-y-6">
+      <h1 className="text-2xl font-semibold text-zinc-900">Imprint</h1>
+
+      <div>
+        <strong>Information according to §5 TMG</strong>
+      </div>
+
+      <div>
+        Dr. Amir Talebi  
+        Glottertalstr. 13  
+        79271 St. Peter  
+        Germany
+      </div>
+
+      <div>
+        Contact:  
+        Email: contact@hydrotex.eu
+      </div>
+
+      <div>
+        Responsible for content according to §55 Abs. 2 RStV:  
+        Dr. Amir Talebi
+      </div>
+
+    </main>
+  );
+}
