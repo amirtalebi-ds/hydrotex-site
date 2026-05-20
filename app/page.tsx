@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     alternateLocale: ["en_US"],
-    url: "https://hydrotex.eu",
+    url: "https://www.hydrotex.eu",
     siteName: "HydroTex",
     title: "HydroTex | Lösungsmittelbasierte Behandlung von Textilabwässern",
     description:
@@ -156,7 +156,7 @@ const schema = {
     {
       "@type": "WebSite",
       "@id": "https://www.hydrotex.eu/#website",
-      url: "https://hydrotex.eu",
+      url: "https://www.hydrotex.eu",
       name: "HydroTex",
       inLanguage: "de-DE",
       publisher: {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://hydrotex.eu";
+const siteUrl = "https://www.hydrotex.eu";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -20,11 +20,11 @@ import type { CSSProperties } from "react";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "HydroTex | Lösungsmittelbasierte Behandlung von Textilabwässern",
+  title: "HydroTex | Solvent-Based Textile Wastewater Treatment",
   description:
-    "HydroTex entwickelt ein lösungsmittelbasiertes Verfahren zur Behandlung von Textilabwässern mit Fokus auf Schlammreduktion, Wasserwiedergewinnung, Lösungsmittelregeneration und Pilotvalidierung.",
+    "HydroTex develops solvent-based textile wastewater treatment for sludge reduction, water recovery, reusable bio-based solvent regeneration, and lower target operating cost.",
   alternates: {
-    canonical: "/",
+    canonical: "/en",
     languages: {
       de: "/",
       en: "/en"
@@ -32,97 +32,97 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "de_DE",
-    alternateLocale: ["en_US"],
-    url: "https://www.hydrotex.eu",
+    locale: "en_US",
+    alternateLocale: ["de_DE"],
+    url: "https://www.hydrotex.eu/en",
     siteName: "HydroTex",
-    title: "HydroTex | Lösungsmittelbasierte Behandlung von Textilabwässern",
+    title: "HydroTex | Solvent-Based Textile Wastewater Treatment",
     description:
-      "Investorenorientiertes Umwelttechnologie-Konzept für Schlammreduktion, zirkuläre Lösungsmittelregeneration, Wasserwiedergewinnung und Pilotvalidierung.",
+      "Investor-ready textile wastewater technology concept for sludge reduction, circular solvent regeneration, water recovery, and pilot validation.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "HydroTex lösungsmittelbasierte Textilabwasserbehandlung"
+        alt: "HydroTex solvent-based textile wastewater treatment"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "HydroTex | Lösungsmittelbasierte Behandlung von Textilabwässern",
+    title: "HydroTex | Solvent-Based Textile Wastewater Treatment",
     description:
-      "Schlammreduktion, Ziel-OPEX, zirkuläre Lösungsmittelregeneration und pilotfähige Validierung für Textilabwässer.",
+      "Sludge reduction, target lower OPEX, circular solvent regeneration, and pilot-ready validation for textile wastewater.",
     images: ["/og-image.png"]
   }
 };
 
 const impactMetrics = [
   {
-    value: "Bis zu 90%",
-    label: "Schlammreduktion",
-    note: "Zielwert, vorbehaltlich Pilotvalidierung",
+    value: "Up to 90%",
+    label: "sludge reduction",
+    note: "Target impact pending pilot validation",
     icon: TrendingDown
   },
   {
-    value: "€0,3–1,0/m³",
-    label: "Ziel-OPEX",
-    note: "Ausgelegt für kostenorientierte Textil-ETPs",
+    value: "€0.3–1.0/m³",
+    label: "target OPEX",
+    note: "Designed for cost-focused textile ETPs",
     icon: BarChart3
   },
   {
-    value: "Wiederverwendbar",
-    label: "biobasiertes Lösungsmittel",
-    note: "Konzept eines zirkulären Regenerationskreislaufs",
+    value: "Reusable",
+    label: "bio-based solvent",
+    note: "Circular regeneration loop concept",
     icon: Recycle
   },
   {
-    value: "KI-gestützt",
-    label: "Prozessüberwachung",
-    note: "SPS-kompatible Unterstützung, keine Black-Box-Steuerung",
+    value: "AI-supervised",
+    label: "optimization",
+    note: "PLC-ready decision support, not black-box control",
     icon: Sparkles
   }
 ];
 
 const roadmap = [
-  "Machbarkeitsstudie",
-  "Validierung mit realem Abwasser",
-  "Pilotprojekt",
-  "Kommerzielle Umsetzung"
+  "Feasibility Study",
+  "Real Wastewater Validation",
+  "Pilot Project",
+  "Commercial Deployment"
 ];
 
 const opexData = [
-  { name: "Koagulation/Flockung", min: 0.4, max: 1.5, color: "bg-slate-400" },
-  { name: "Aktivkohle", min: 0.5, max: 3.0, color: "bg-sky-500" },
-  { name: "Ozon/AOP", min: 1.0, max: 5.0, color: "bg-indigo-500" },
-  { name: "Membranen", min: 1.0, max: 10.0, color: "bg-cyan-700" },
-  { name: "HydroTex-Zielwert", min: 0.3, max: 1.0, color: "bg-hydro-teal", highlight: true }
+  { name: "Coagulation", min: 0.4, max: 1.5, color: "bg-slate-400" },
+  { name: "Activated Carbon", min: 0.5, max: 3.0, color: "bg-sky-500" },
+  { name: "Ozone/AOP", min: 1.0, max: 5.0, color: "bg-indigo-500" },
+  { name: "Membranes", min: 1.0, max: 10.0, color: "bg-cyan-700" },
+  { name: "HydroTex target", min: 0.3, max: 1.0, color: "bg-hydro-teal", highlight: true }
 ];
 
 const comparison = [
   {
-    technology: "Koagulation/Flockung",
-    strength: "Niedrige CAPEX und etablierter Anlagenbetrieb",
-    limitation: "Hoher Chemikalienbedarf und Bildung von Nassschlamm",
-    hydrotex: "Zielt auf geringere Schlammbelastung durch Extraktion und Regeneration"
+    technology: "Coagulation",
+    strength: "Low CAPEX and familiar operation",
+    limitation: "High chemical demand and wet sludge generation",
+    hydrotex: "Targets lower waste burden through extraction and regeneration"
   },
   {
-    technology: "Aktivkohle",
-    strength: "Starke Entfärbungsleistung",
-    limitation: "Kosten für Austausch oder Regeneration des beladenen Mediums",
-    hydrotex: "Konzipiert um einen wiederverwendbaren Lösungsmittelkreislauf"
+    technology: "Activated Carbon",
+    strength: "Strong color removal",
+    limitation: "Spent media replacement or regeneration cost",
+    hydrotex: "Designed around a reusable solvent loop"
   },
   {
-    technology: "Ozon/AOP",
-    strength: "Hohes Potenzial zur Entfärbung",
-    limitation: "Energie- und Oxidationsmittelkosten können erheblich sein",
-    hydrotex: "Zielt auf moderaten Energiebedarf und geringere Verbrauchsstofflast"
+    technology: "Ozone/AOP",
+    strength: "High decolorization potential",
+    limitation: "Energy and oxidant cost can be significant",
+    hydrotex: "Targets moderate energy use and lower consumable burden"
   },
   {
-    technology: "Membranen",
-    strength: "Sehr gute Polier- und Wiederverwendungsmöglichkeiten",
-    limitation: "Fouling, Konzentratmanagement und hohe CAPEX",
-    hydrotex: "Positioniert als Nachrüstpfad vor kapitalintensiven Wiederverwendungssystemen"
+    technology: "Membranes",
+    strength: "Excellent polishing and reuse potential",
+    limitation: "Fouling, concentrate management, and high CAPEX",
+    hydrotex: "Positioned as a retrofit pathway before high-CAPEX reuse systems"
   }
 ];
 
@@ -144,8 +144,8 @@ const schema = {
       "@type": "Person",
       "@id": "https://www.hydrotex.eu/#founder",
       name: "Dr. Amir Talebi",
-      jobTitle: "Umwelttechnologieforscher & Gründer",
-      description: "Promotion in Environmental Technology und Gründer von HydroTex.",
+      jobTitle: "Environmental Technology Researcher & Founder",
+      description: "PhD in Environmental Technology and founder of HydroTex.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Freiburg",
@@ -155,43 +155,36 @@ const schema = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.hydrotex.eu/#website-de",
-      url: "https://www.hydrotex.eu/de",
+      "@id": "https://www.hydrotex.eu/#website",
+      url: "https://www.hydrotex.eu",
       name: "HydroTex",
-      inLanguage: "de-DE",
       publisher: {
         "@id": "https://www.hydrotex.eu/#organization"
       }
     },
     {
       "@type": "Service",
-      "@id": "https://www.hydrotex.eu/#service-de",
-      name: "Validierung lösungsmittelbasierter Textilabwasserbehandlung",
+      "@id": "https://www.hydrotex.eu/#service",
+      name: "Solvent-Based Textile Wastewater Treatment Validation",
       provider: {
         "@id": "https://www.hydrotex.eu/#organization"
       },
-      areaServed: ["Deutschland", "Malaysia", "Südostasien", "Europäische Union"],
-      serviceType: "Industrielle Validierung und Pilotentwicklung für Textilabwasserbehandlung",
+      areaServed: ["Germany", "Malaysia", "Southeast Asia", "European Union"],
+      serviceType: "Industrial textile wastewater treatment validation and pilot development",
       description:
-        "HydroTex entwickelt lösungsmittelbasierte Textilabwasserbehandlung für Schlammreduktion, Wasserwiedergewinnung, zirkuläre Lösungsmittelregeneration und Pilotvalidierung."
+        "HydroTex develops solvent-based textile wastewater treatment for sludge reduction, water recovery, circular solvent regeneration, and pilot validation."
     }
   ]
 };
 
-const formatCost = (value: number) =>
-  value.toLocaleString("de-DE", {
-    minimumFractionDigits: 1,
-    maximumFractionDigits: 1
-  });
-
-export default function GermanHome() {
+export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <main lang="de">
+      <main lang="en">
         <Header />
         <Hero />
         <Impact />
@@ -211,7 +204,7 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-white/78 backdrop-blur-xl">
       <nav className="section-shell flex h-16 items-center justify-between">
-        <Link href="/#top" className="flex items-center gap-3" aria-label="HydroTex Startseite">
+        <Link href="#top" className="flex items-center gap-3" aria-label="HydroTex home">
           <span className="flex size-9 items-center justify-center rounded-full bg-hydro-teal text-white">
             <Waves size={19} strokeWidth={2.4} />
           </span>
@@ -219,22 +212,22 @@ function Header() {
         </Link>
         <div className="hidden items-center gap-6 text-sm font-medium text-hydro-slate md:flex">
           <Link href="#impact" className="transition hover:text-hydro-teal">
-            Wirkung
+            Impact
           </Link>
           <Link href="#roadmap" className="transition hover:text-hydro-teal">
-            Fahrplan
+            Roadmap
           </Link>
           <Link href="#comparison" className="transition hover:text-hydro-teal">
-            Vergleich
+            Comparison
           </Link>
           <Link href="#founder" className="transition hover:text-hydro-teal">
-            Gründer
+            Founder
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <LanguageSwitcher current="de" />
+          <LanguageSwitcher current="en" />
           <Link href="#contact" className="btn-secondary hidden py-2.5 sm:inline-flex">
-            Kontakt
+            Contact Us
           </Link>
         </div>
       </nav>
@@ -253,7 +246,7 @@ function LanguageSwitcher({ current }: { current: "en" | "de" }) {
   return (
     <div
       className="flex items-center rounded-full border border-hydro-line bg-white/82 p-1"
-      aria-label="Sprachauswahl"
+      aria-label="Language selector"
     >
       <Link href="/en" className={optionClass("en")} aria-current={current === "en" ? "page" : undefined}>
         EN
@@ -280,7 +273,7 @@ function Hero() {
           aria-hidden="true"
         >
           <defs>
-            <linearGradient id="waveStrokeDe" x1="0" x2="1" y1="0" y2="0">
+            <linearGradient id="waveStroke" x1="0" x2="1" y1="0" y2="0">
               <stop offset="0%" stopColor="#4BB6B7" stopOpacity="0.04" />
               <stop offset="48%" stopColor="#0F8B78" stopOpacity="0.18" />
               <stop offset="100%" stopColor="#166A8F" stopOpacity="0.08" />
@@ -291,7 +284,7 @@ function Hero() {
               key={y}
               d={`M -120 ${y} C 150 ${y - 55}, 300 ${y + 55}, 560 ${y} S 980 ${y - 55}, 1560 ${y + 18}`}
               fill="none"
-              stroke="url(#waveStrokeDe)"
+              stroke="url(#waveStroke)"
               strokeWidth={index % 3 === 0 ? 2.2 : 1.4}
             />
           ))}
@@ -300,26 +293,25 @@ function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-hydro-paper/80 to-transparent" />
       <div className="section-shell relative flex min-h-[calc(88vh-4rem)] items-center py-20 sm:py-24">
         <div className="max-w-3xl">
-          <p className="eyebrow">Textilabwasser • Schlammreduktion • Wasserwiedergewinnung</p>
+          <p className="eyebrow">Textile wastewater • sludge reduction • water recovery</p>
           <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.04] text-hydro-ink sm:text-5xl lg:text-6xl">
-            Lösungsmittelbasierte Behandlung von Textilabwässern zur Schlammreduktion und Wasserwiedergewinnung
+            Solvent-Based Textile Wastewater Treatment for Sludge Reduction and Water Recovery
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-hydro-slate sm:text-xl">
-            HydroTex entwickelt eine modulare Extraktions- und Regenerationsplattform
-            für farbstoffreiche Textilabwässer mit dem Ziel, Betriebskosten zu
-            senken, Lösungsmittel zirkulär wiederzuverwenden und industrielle
-            Pilotvalidierung zu ermöglichen.
+            HydroTex is developing a modular extraction and regeneration platform
+            for dye-rich textile wastewater, targeting lower operating costs,
+            circular solvent reuse, and pilot-ready industrial validation.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="#technology" className="btn-primary">
-              Technologie ansehen <ArrowRight size={18} />
+              Explore the Technology <ArrowRight size={18} />
             </Link>
             <Link href="#contact" className="btn-secondary">
-              Kontakt aufnehmen <Mail size={18} />
+              Contact Us <Mail size={18} />
             </Link>
           </div>
           <div className="mt-10 grid max-w-2xl grid-cols-1 gap-3 text-sm text-hydro-slate sm:grid-cols-3">
-            {["Machbarkeitsorientiert", "Validierung mit realem Abwasser", "Kommerzieller Pilotierungspfad"].map(
+            {["Feasibility-first", "Real wastewater validation", "Commercial pilot pathway"].map(
               (item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle2 className="shrink-0 text-hydro-teal" size={18} />
@@ -338,20 +330,20 @@ function Impact() {
   return (
     <Reveal id="impact" className="bg-white py-20 sm:py-24">
       <div className="section-shell">
-        <p className="eyebrow">Wirkungsziele</p>
+        <p className="eyebrow">Impact targets</p>
         <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
           <div>
-            <h2 className="section-title">Ökologische und wirtschaftliche Vorteile klar nachvollziehbar.</h2>
+            <h2 className="section-title">Environmental and economic benefits, stated clearly.</h2>
             <p className="section-copy">
-              HydroTex ist auf messbare Ergebnisse ausgerichtet, die für
-              Investoren, Fördergeber und Industriepartner entscheidend sind:
-              geringere Schlammbelastung, wettbewerbsfähige Ziel-Betriebskosten,
-              zirkuläre Chemie und nachvollziehbare Prozessüberwachung.
+              HydroTex is built around measurable outcomes that matter to
+              investors, grant evaluators, and industrial partners: lower sludge
+              burden, lower target treatment cost, circular chemistry, and
+              traceable process control.
             </p>
           </div>
           <p className="max-w-sm text-sm leading-6 text-hydro-slate">
-            Angaben sind Zielwerte für die Validierung und müssen durch Tests
-            mit realem Abwasser sowie Pilotbetrieb bestätigt werden.
+            Figures are target values for validation and should be confirmed
+            through real wastewater testing and pilot operation.
           </p>
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -374,21 +366,20 @@ function Technology() {
     <Reveal id="technology" className="py-20 sm:py-24">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>
-          <p className="eyebrow">Technologiekonzept</p>
-          <h2 className="section-title">Ein zirkulärer Lösungsmittelkreislauf für farbstoffreiche Textilabwässer.</h2>
+          <p className="eyebrow">Technology concept</p>
+          <h2 className="section-title">A circular solvent loop for dye-rich textile effluent.</h2>
           <p className="section-copy">
-            HydroTex ist als modularer Nachrüstpfad für Färbereien und
-            Ausrüstungsbetriebe konzipiert. Das System überführt Farbstoffe aus
-            dem Abwasser in eine wiederverwendbare organische Phase, regeneriert
-            das Lösungsmittel und konzentriert Verunreinigungen in einem kleineren
-            Abfallstrom.
+            HydroTex is designed as a modular retrofit pathway for dyeing and
+            finishing plants. The system transfers dyes from wastewater into a
+            reusable organic phase, regenerates the solvent, and concentrates
+            contaminants into a smaller waste stream.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
-              ["Extraktion", "Gezielte Überführung von Farbstoffen aus dem Abwasser in eine wiederverwendbare Lösungsmittelphase."],
-              ["Regeneration", "Lösungsmittelkreislauf für wiederholte Nutzung und geringeren Verbrauchsstoffbedarf."],
-              ["Abfallreduktion", "Ziel ist der Ersatz voluminöser Schlämme durch einen kleineren konzentrierten Output."],
-              ["Industrielle Steuerung", "SPS-kompatible Automatisierung mit optionaler KI-gestützter Prozessüberwachung."]
+              ["Extraction", "Targeted dye transfer from wastewater into a reusable solvent phase."],
+              ["Regeneration", "Solvent loop designed for repeated reuse and lower consumable demand."],
+              ["Waste reduction", "Aim to replace bulky sludge with a smaller concentrated output."],
+              ["Industrial control", "PLC-ready automation with optional AI-supervised optimization."]
             ].map(([title, text]) => (
               <div key={title} className="rounded-[8px] border border-hydro-line bg-white p-5">
                 <h3 className="font-semibold text-hydro-ink">{title}</h3>
@@ -399,17 +390,16 @@ function Technology() {
         </div>
         <div className="rounded-[8px] border border-hydro-line bg-white p-4 shadow-soft">
           <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
-            <ProcessNode icon={Factory} title="Textilabwasser" text="Farbstoffbelastetes Abwasser" />
+            <ProcessNode icon={Factory} title="Textile effluent" text="Colored wastewater" />
             <ArrowRight className="mx-auto hidden text-hydro-aqua sm:block" />
-            <ProcessNode icon={Beaker} title="HydroTex-Modul" text="Extraktion + Regeneration" featured />
+            <ProcessNode icon={Beaker} title="HydroTex module" text="Extraction + regeneration" featured />
             <ArrowRight className="mx-auto hidden text-hydro-aqua sm:block" />
-            <ProcessNode icon={Droplets} title="Wasserwiedergewinnung" text="Reduzierte Farbfracht" />
+            <ProcessNode icon={Droplets} title="Recovered water" text="Lower color load" />
           </div>
           <div className="mt-4 rounded-[8px] bg-hydro-mint p-4 text-sm leading-6 text-hydro-slate">
-            <strong className="text-hydro-ink">Validierungsfokus:</strong> Restgehalt
-            an Lösungsmittel, Lösungsmittelverlust pro m³, Phasentrennung,
-            Umgang mit Sekundärabfällen, CSB-Einfluss und stabile wiederholte
-            Regenerationszyklen.
+            <strong className="text-hydro-ink">Validation focus:</strong> residual solvent,
+            solvent loss per m³, phase separation, secondary waste handling,
+            COD impact, and stable repeated regeneration cycles.
           </div>
         </div>
       </div>
@@ -447,12 +437,11 @@ function Roadmap() {
   return (
     <Reveal id="roadmap" className="bg-white py-20 sm:py-24">
       <div className="section-shell">
-        <p className="eyebrow">Validierungs- und Pilotierungspfad</p>
-        <h2 className="section-title">Von der Machbarkeit zur kommerziellen Umsetzung.</h2>
+        <p className="eyebrow">Validation roadmap</p>
+        <h2 className="section-title">From feasibility to commercial deployment.</h2>
         <p className="section-copy">
-          Der Fahrplan ist bewusst stufenweise angelegt. Jede Phase reduziert
-          technische, wirtschaftliche, regulatorische und kundenbezogene Risiken,
-          bevor größere Investitionen ausgelöst werden.
+          The roadmap is intentionally staged. Each phase reduces technical,
+          economic, and customer-adoption risk before major capital is committed.
         </p>
         <div className="mt-12 grid gap-5 lg:grid-cols-4">
           {roadmap.map((item, index) => (
@@ -468,10 +457,10 @@ function Roadmap() {
               <h3 className="mt-5 text-lg font-semibold text-hydro-ink">{item}</h3>
               <p className="mt-3 text-sm leading-6 text-hydro-slate">
                 {[
-                  "Proben, KPIs, Sicherheitsanforderungen und techno-ökonomische Annahmen definieren.",
-                  "Reales Textilabwasser auf Entfärbung, Lösungsmittelverlust und Phasentrennung testen.",
-                  "Kundenrelevanten Pilotbetrieb mit Entscheidungspunkten und Kostennachweisen durchführen.",
-                  "Modulare Einheiten nach Validierung von Leistung, EHS und Wirtschaftlichkeit einsetzen."
+                  "Define samples, KPIs, safety requirements, and techno-economic assumptions.",
+                  "Test real textile wastewater for color removal, solvent loss, and phase separation.",
+                  "Operate a customer-relevant pilot with decision gates and cost evidence.",
+                  "Deploy modular units after performance, EHS, and economics are validated."
                 ][index]}
               </p>
             </div>
@@ -488,21 +477,21 @@ function OpexChart() {
     <Reveal className="py-20 sm:py-24">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
-          <p className="eyebrow">Wettbewerbsfähige OPEX</p>
-          <h2 className="section-title">Ein Zielkostenkorridor im Wettbewerb mit etablierten Behandlungsverfahren.</h2>
+          <p className="eyebrow">Competitive OPEX</p>
+          <h2 className="section-title">A target cost range designed to compete with established treatments.</h2>
           <p className="section-copy">
-            HydroTex wird im Verhältnis zu Behandlungsoptionen positioniert, die
-            Textilbetriebe bereits kennen. Der Ziel-OPEX-Korridor ist attraktiv,
-            muss jedoch mit realem Abwasser, Lösungsmittelverlustdaten und
-            Pilotbetrieb validiert werden.
+            HydroTex is positioned against the treatment options already known
+            to textile mills. The target OPEX range is attractive, but it must
+            be validated with real wastewater, solvent-loss data, and pilot
+            operating evidence.
           </p>
         </div>
         <div className="rounded-[8px] border border-hydro-line bg-white p-5 shadow-soft">
           <div className="flex items-center justify-between gap-4 border-b border-hydro-line pb-4">
-            <h3 className="font-semibold text-hydro-ink">Vergleich der Betriebskosten</h3>
+            <h3 className="font-semibold text-hydro-ink">Operating cost comparison</h3>
             <span className="text-sm text-hydro-slate">€/m³</span>
           </div>
-          <div className="mt-6 space-y-5" aria-label="Balkendiagramm der Betriebskostenbereiche">
+          <div className="mt-6 space-y-5" aria-label="Operating cost range bar chart">
             {opexData.map((item) => {
               const left = (item.min / maxScale) * 100;
               const width = ((item.max - item.min) / maxScale) * 100;
@@ -511,7 +500,7 @@ function OpexChart() {
                   <div className="mb-2 flex items-center justify-between gap-3 text-sm">
                     <span className="font-medium text-hydro-ink">{item.name}</span>
                     <span className="text-hydro-slate">
-                      {formatCost(item.min)}–{formatCost(item.max)}
+                      {item.min.toFixed(1)}–{item.max.toFixed(1)}
                     </span>
                   </div>
                   <div className="relative h-4 rounded-full bg-slate-100">
@@ -526,10 +515,10 @@ function OpexChart() {
           </div>
           <div className="mt-5 flex justify-between text-xs text-hydro-slate">
             <span>0</span>
-            <span>2,5</span>
-            <span>5,0</span>
-            <span>7,5</span>
-            <span>10,0</span>
+            <span>2.5</span>
+            <span>5.0</span>
+            <span>7.5</span>
+            <span>10.0</span>
           </div>
         </div>
       </div>
@@ -541,30 +530,30 @@ function CompetitiveComparison() {
   return (
     <Reveal id="comparison" className="bg-white py-20 sm:py-24">
       <div className="section-shell">
-        <p className="eyebrow">Wettbewerbsvergleich</p>
-        <h2 className="section-title">Kein weiteres Black-Box-Versprechen für die Abwasserbehandlung.</h2>
+        <p className="eyebrow">Competitive comparison</p>
+        <h2 className="section-title">Not another black-box treatment promise.</h2>
         <p className="section-copy">
-          HydroTex sollte an den Technologien gemessen werden, die Textilbetriebe
-          bereits prüfen. Die Differenzierung liegt nicht allein in der
-          Entfärbung, sondern im Potenzial zur Schlammreduktion, Regeneration der
-          Prozesschemie und einem wirtschaftlicheren Nachrüstpfad.
+          HydroTex should be evaluated against the technologies mills already
+          consider. The differentiation is not simply color removal; it is the
+          potential to reduce sludge, regenerate process chemistry, and provide
+          a lower-cost retrofit path.
         </p>
         <div className="mt-10 overflow-hidden rounded-[8px] border border-hydro-line bg-white shadow-sm">
           <div className="hidden grid-cols-[1fr_1.25fr_1.25fr_1.35fr] bg-hydro-paper text-sm font-semibold text-hydro-ink md:grid">
-            <div className="border-r border-hydro-line p-4">Technologie</div>
-            <div className="border-r border-hydro-line p-4">Warum sie genutzt wird</div>
-            <div className="border-r border-hydro-line p-4">Zentrale Grenze</div>
-            <div className="p-4">HydroTex-Positionierung</div>
+            <div className="border-r border-hydro-line p-4">Technology</div>
+            <div className="border-r border-hydro-line p-4">Why it is used</div>
+            <div className="border-r border-hydro-line p-4">Key limitation</div>
+            <div className="p-4">HydroTex positioning</div>
           </div>
           {comparison.map((row) => (
             <div
               key={row.technology}
               className="grid gap-0 border-t border-hydro-line md:grid-cols-[1fr_1.25fr_1.25fr_1.35fr]"
             >
-              <ComparisonCell label="Technologie" value={row.technology} strong />
-              <ComparisonCell label="Warum sie genutzt wird" value={row.strength} />
-              <ComparisonCell label="Zentrale Grenze" value={row.limitation} />
-              <ComparisonCell label="HydroTex-Positionierung" value={row.hydrotex} accent />
+              <ComparisonCell label="Technology" value={row.technology} strong />
+              <ComparisonCell label="Why it is used" value={row.strength} />
+              <ComparisonCell label="Key limitation" value={row.limitation} />
+              <ComparisonCell label="HydroTex positioning" value={row.hydrotex} accent />
             </div>
           ))}
         </div>
@@ -605,8 +594,8 @@ function Founder() {
             AT
           </div>
           <h2 className="mt-6 text-2xl font-semibold text-hydro-ink">Dr. Amir Talebi</h2>
-          <p className="mt-2 text-hydro-blue">Umwelttechnologieforscher & Gründer</p>
-          <p className="mt-1 text-sm text-hydro-slate">Promotion in Environmental Technology</p>
+          <p className="mt-2 text-hydro-blue">Environmental Technology Researcher & Founder</p>
+          <p className="mt-1 text-sm text-hydro-slate">PhD in Environmental Technology</p>
           <div className="mt-6 flex gap-3">
             <a
               href="https://de.linkedin.com/in/amirtalebienvtech"
@@ -617,26 +606,25 @@ function Founder() {
               <Linkedin size={17} /> LinkedIn
             </a>
             <a href="mailto:contact@hydrotex.eu" className="btn-secondary py-2.5">
-              <Mail size={17} /> E-Mail
+              <Mail size={17} /> Email
             </a>
           </div>
         </div>
         <div>
-          <p className="eyebrow">Gründerprofil</p>
-          <h2 className="section-title">Technische Tiefe mit validierungsorientiertem Kommerzialisierungspfad.</h2>
+          <p className="eyebrow">Founder profile</p>
+          <h2 className="section-title">Technical depth with a validation-first commercialization path.</h2>
           <p className="section-copy">
-            HydroTex wird von Dr. Amir Talebi gegründet und verbindet
-            Forschungserfahrung in der Umwelttechnologie mit einem praktischen
-            Fokus auf Abwasserbehandlung, industrielle Machbarkeit und
-            Pilotplanung. Der aktuelle Schwerpunkt liegt darauf,
-            Proof-of-Concept-Chemie in Evidenz mit realem Abwasser,
-            Kundengespräche und partnerfähige Pilotunterlagen zu überführen.
+            HydroTex is founder-led by Dr. Amir Talebi, combining environmental
+            technology research with a practical focus on wastewater treatment,
+            industrial feasibility, and pilot planning. The current priority is
+            to convert proof-of-concept chemistry into real wastewater evidence,
+            customer discovery, and partner-ready pilot documentation.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
-              [ShieldCheck, "Compliance-orientiertes Denken"],
-              [Leaf, "Nachhaltigkeitsgetriebenes Design"],
-              [Factory, "Fokus auf Industriepartner"]
+              [ShieldCheck, "Compliance-ready thinking"],
+              [Leaf, "Sustainability-driven design"],
+              [Factory, "Industrial partner focus"]
             ].map(([Icon, label]) => {
               const TypedIcon = Icon as typeof ShieldCheck;
               return (
@@ -659,27 +647,26 @@ function Materials() {
       <div className="section-shell">
         <div className="rounded-[8px] border border-hydro-line bg-hydro-paper p-6 sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
           <div>
-            <p className="eyebrow">Unterlagen anfragen</p>
-            <h2 className="mt-3 text-3xl font-semibold text-hydro-ink">Unterlagen für Investoren und Partner auf Anfrage.</h2>
+            <p className="eyebrow">Request materials</p>
+            <h2 className="mt-3 text-3xl font-semibold text-hydro-ink">Investor and partner materials by request.</h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-hydro-slate">
-              Detaillierte Geschäftsplanung, Finanzannahmen und Partnermaterialien
-              werden ausschließlich im direkten Kontakt geteilt. Sensible
-              Frühphaseninformationen bleiben damit außerhalb der öffentlichen
-              Website.
+              Detailed business planning, financial assumptions, and partner
+              materials are shared through direct contact only. This keeps
+              sensitive early-stage information off the public website.
             </p>
           </div>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-0">
             <a
-              href="mailto:contact@hydrotex.eu?subject=Anfrage%20HydroTex%20Businessplan"
+              href="mailto:contact@hydrotex.eu?subject=Request%20HydroTex%20Business%20Plan"
               className="btn-primary"
             >
-              <Mail size={18} /> Businessplan anfragen
+              <Mail size={18} /> Request Business Plan
             </a>
             <a
-              href="mailto:contact@hydrotex.eu?subject=Anfrage%20HydroTex%20One-Pager"
+              href="mailto:contact@hydrotex.eu?subject=Request%20HydroTex%20One-Pager"
               className="btn-secondary bg-white"
             >
-              <Mail size={18} /> One-Pager anfragen
+              <Mail size={18} /> Request One-Pager
             </a>
           </div>
         </div>
@@ -696,9 +683,9 @@ function ContactFooter() {
           <div>
             <h2 className="text-2xl font-semibold">HydroTex</h2>
             <p className="mt-4 max-w-xl text-sm leading-6 text-white/72">
-              Lösungsmittelbasiertes Konzept zur Behandlung von Textilabwässern
-              für Schlammreduktion, Wasserwiedergewinnung, zirkuläre
-              Lösungsmittelregeneration und pilotfähige industrielle Validierung.
+              Solvent-based textile wastewater treatment concept for sludge
+              reduction, water recovery, circular solvent regeneration, and
+              pilot-ready industrial validation.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="mailto:contact@hydrotex.eu" className="btn-primary bg-white text-hydro-ink hover:bg-hydro-mint">
@@ -715,36 +702,36 @@ function ContactFooter() {
             </div>
           </div>
           <div>
-            <h3 className="font-semibold">Mehr erfahren</h3>
+            <h3 className="font-semibold">Explore</h3>
             <div className="mt-4 grid gap-3 text-sm text-white/72">
               <Link href="#technology" className="hover:text-white">
-                Technologie
+                Technology
               </Link>
               <Link href="#impact" className="hover:text-white">
-                Wirkung
+                Impact
               </Link>
               <Link href="#roadmap" className="hover:text-white">
-                Validierungsfahrplan
+                Validation Roadmap
               </Link>
               <Link href="#materials" className="hover:text-white">
-                Unterlagen anfragen
+                Request Materials
               </Link>
             </div>
           </div>
           <div>
-            <h3 className="font-semibold">Rechtliches</h3>
+            <h3 className="font-semibold">Legal</h3>
             <div className="mt-4 grid gap-3 text-sm text-white/72">
               <Link href="/impressum" className="hover:text-white">
-                Impressum
+                Imprint
               </Link>
               <Link href="/datenschutz" className="hover:text-white">
-                Datenschutz
+                Privacy Policy
               </Link>
             </div>
           </div>
         </div>
         <div className="mt-10 border-t border-white/12 pt-6 text-sm text-white/56">
-          © {new Date().getFullYear()} HydroTex. Freiburg, Deutschland.
+          © {new Date().getFullYear()} HydroTex. Freiburg, Germany.
         </div>
       </div>
     </footer>
