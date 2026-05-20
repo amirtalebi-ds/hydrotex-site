@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://www.hydrotex.eu";
+const siteUrl = "https://hydrotex.eu";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "HydroTex | Solvent-Based Textile Wastewater Treatment",
+    default: "HydroTex | Lösungsmittelbasierte Behandlung von Textilabwässern",
     template: "%s | HydroTex"
   },
   description:
-    "HydroTex develops solvent-based textile wastewater treatment for sludge reduction, water recovery, reusable bio-based solvent regeneration, and lower target operating cost.",
+    "HydroTex entwickelt ein lösungsmittelbasiertes Verfahren zur Behandlung von Textilabwässern mit Fokus auf Schlammreduktion, Wasserwiedergewinnung, Lösungsmittelregeneration und Pilotvalidierung.",
   keywords: [
+    "Textilabwasserbehandlung",
+    "Schlammreduktion",
+    "Wasserwiedergewinnung",
+    "Lösungsmittelextraktion",
     "textile wastewater treatment",
     "sludge reduction",
     "water recovery",
@@ -26,33 +30,33 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      en: "/",
-      de: "/de"
+      de: "/",
+      en: "/en"
     }
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    alternateLocale: ["de_DE"],
+    locale: "de_DE",
+    alternateLocale: ["en_US"],
     url: siteUrl,
     siteName: "HydroTex",
-    title: "HydroTex | Solvent-Based Textile Wastewater Treatment",
+    title: "HydroTex | Lösungsmittelbasierte Behandlung von Textilabwässern",
     description:
-      "Investor-ready textile wastewater technology concept for sludge reduction, circular solvent regeneration, water recovery, and pilot validation.",
+      "Investorenorientiertes Umwelttechnologie-Konzept für Schlammreduktion, zirkuläre Lösungsmittelregeneration, Wasserwiedergewinnung und Pilotvalidierung.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "HydroTex solvent-based textile wastewater treatment"
+        alt: "HydroTex lösungsmittelbasierte Textilabwasserbehandlung"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "HydroTex | Solvent-Based Textile Wastewater Treatment",
+    title: "HydroTex | Lösungsmittelbasierte Behandlung von Textilabwässern",
     description:
-      "Sludge reduction, target lower OPEX, circular solvent regeneration, and pilot-ready validation for textile wastewater.",
+      "Schlammreduktion, Ziel-OPEX, zirkuläre Lösungsmittelregeneration und pilotfähige Validierung für Textilabwässer.",
     images: ["/og-image.png"]
   },
   robots: {
@@ -73,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body>{children}</body>
     </html>
   );
