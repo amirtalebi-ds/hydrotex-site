@@ -24,11 +24,16 @@ export const metadata: Metadata = {
   creator: "HydroTex",
   publisher: "HydroTex",
   alternates: {
-    canonical: "/"
+    canonical: "/",
+    languages: {
+      en: "/",
+      de: "/de"
+    }
   },
   openGraph: {
     type: "website",
     locale: "en_US",
+    alternateLocale: ["de_DE"],
     url: siteUrl,
     siteName: "HydroTex",
     title: "HydroTex | Solvent-Based Textile Wastewater Treatment",
