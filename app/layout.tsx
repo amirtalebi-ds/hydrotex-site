@@ -6,12 +6,17 @@ const siteUrl = "https://www.hydrotex.eu";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "HydroTex | Solvent-Based Textile Wastewater Treatment",
+    default: "HydroTex | Validierung für Textilabwasser und Schlammreduktion",
     template: "%s | HydroTex"
   },
   description:
-    "HydroTex develops solvent-based textile wastewater treatment for sludge reduction, water recovery, reusable bio-based solvent regeneration, and lower target operating cost.",
+    "HydroTex ist eine gründergeführte Umwelttechnik- und Projektentwicklungsinitiative für Machbarkeitsstudien, Textilabwasserbewertung, Pilotvorbereitung und schlammärmere Behandlungsansätze.",
   keywords: [
+    "Textilabwasserbehandlung",
+    "Schlammreduktion",
+    "Machbarkeitsstudie",
+    "Pilotvorbereitung",
+    "Lösungsmittelextraktion",
     "textile wastewater treatment",
     "sludge reduction",
     "water recovery",
@@ -24,30 +29,35 @@ export const metadata: Metadata = {
   creator: "HydroTex",
   publisher: "HydroTex",
   alternates: {
-    canonical: "/"
+    canonical: "/",
+    languages: {
+      de: "/",
+      en: "/en"
+    }
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "de_DE",
+    alternateLocale: ["en_US"],
     url: siteUrl,
     siteName: "HydroTex",
-    title: "HydroTex | Solvent-Based Textile Wastewater Treatment",
+    title: "HydroTex | Validierung für Textilabwasser und Schlammreduktion",
     description:
-      "Investor-ready textile wastewater technology concept for sludge reduction, circular solvent regeneration, water recovery, and pilot validation.",
+      "Feasibility-first Umwelttechnik für Textilabwasser: Schlammreduktion, Compliance-Risiko, techno-ökonomische Bewertung und Pilotvorbereitung.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "HydroTex solvent-based textile wastewater treatment"
+        alt: "HydroTex Textilabwasser Validierung"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "HydroTex | Solvent-Based Textile Wastewater Treatment",
+    title: "HydroTex | Validierung für Textilabwasser und Schlammreduktion",
     description:
-      "Sludge reduction, target lower OPEX, circular solvent regeneration, and pilot-ready validation for textile wastewater.",
+      "Gründergeführte Umwelttechnikinitiative für Machbarkeit, industrielle Validierung und Pilotvorbereitung im Textilabwasser.",
     images: ["/og-image.png"]
   },
   robots: {
@@ -68,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body>{children}</body>
     </html>
   );

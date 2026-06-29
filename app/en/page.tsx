@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import {
   ArrowRight,
   BarChart3,
-  Beaker,
   CheckCircle2,
   ClipboardCheck,
   Factory,
@@ -14,18 +13,17 @@ import {
   Map,
   Recycle,
   ShieldCheck,
-  SlidersHorizontal,
   TrendingDown,
   Waves
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "HydroTex | Validierung für Textilabwasser und Schlammreduktion",
+  title: "HydroTex | Textile Wastewater Feasibility and Sludge Reduction",
   description:
-    "HydroTex ist eine gründergeführte Umwelttechnik- und Projektentwicklungsinitiative für Machbarkeitsstudien, Textilabwasserbewertung, Pilotvorbereitung und schlammärmere Behandlungsansätze.",
+    "HydroTex is a founder-led environmental technology and project-development initiative for feasibility studies, textile wastewater assessment, pilot preparation, and lower-sludge treatment validation.",
   alternates: {
-    canonical: "/",
+    canonical: "/en",
     languages: {
       de: "/",
       en: "/en"
@@ -33,45 +31,45 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "de_DE",
-    alternateLocale: ["en_US"],
-    url: "https://www.hydrotex.eu",
+    locale: "en_US",
+    alternateLocale: ["de_DE"],
+    url: "https://www.hydrotex.eu/en",
     siteName: "HydroTex",
-    title: "HydroTex | Validierung für Textilabwasser und Schlammreduktion",
+    title: "HydroTex | Textile Wastewater Feasibility and Sludge Reduction",
     description:
-      "Feasibility-first Umwelttechnik für Textilabwasser: Schlammreduktion, Compliance-Risiko, techno-ökonomische Bewertung und Pilotvorbereitung.",
+      "Feasibility-first environmental technology for textile wastewater: sludge reduction, compliance risk, techno-economic assessment, and pilot preparation.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "HydroTex Textilabwasser Validierung"
+        alt: "HydroTex textile wastewater validation"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "HydroTex | Validierung für Textilabwasser und Schlammreduktion",
+    title: "HydroTex | Textile Wastewater Feasibility and Sludge Reduction",
     description:
-      "Gründergeführte Umwelttechnikinitiative für Machbarkeit, industrielle Validierung und Pilotvorbereitung im Textilabwasser.",
+      "Founder-led environmental technology initiative for feasibility, industrial validation, and pilot preparation in textile wastewater.",
     images: ["/og-image.png"]
   }
 };
 
 const services = [
   {
-    title: "Machbarkeitsstudien",
-    text: "Bewertung von Abwasserproblemen, Schlammreduktion, Behandlungsoptionen und ersten technischen Entscheidungskriterien.",
+    title: "Feasibility studies",
+    text: "Assessment of wastewater problems, sludge-reduction potential, treatment options, and first technical decision criteria.",
     icon: ClipboardCheck
   },
   {
-    title: "Abwasser- und Kostenbewertung",
-    text: "Technische Einordnung von Farbfracht, Chemikalieneinsatz, Schlammbelastung, Betriebskosten und Compliance-Risiken.",
+    title: "Wastewater and cost assessment",
+    text: "Technical review of color load, chemical demand, sludge burden, operating cost, and compliance-related risk.",
     icon: BarChart3
   },
   {
-    title: "Pilotvorbereitung",
-    text: "Probenplan, KPIs, Testlogik, Partnerkoordination und Unterlagen für eine spätere industrielle Pilotvalidierung.",
+    title: "Pilot preparation",
+    text: "Sampling plan, KPIs, test logic, partner coordination, and documentation for later industrial pilot validation.",
     icon: Map
   }
 ];
@@ -79,44 +77,44 @@ const services = [
 const pathway = [
   {
     phase: "Phase 1",
-    title: "Industriegespräche und Abwasserzugang",
-    text: "Textilbetriebe, Hochschul- und Technikpartner einbinden, reale Abwasserproben sichern und den konkreten Kundennutzen prüfen."
+    title: "Industrial engagement and wastewater access",
+    text: "Engage textile mills, university partners, and technical partners, secure real wastewater samples, and test the concrete customer need."
   },
   {
     phase: "Phase 2",
-    title: "Technische und wirtschaftliche Machbarkeit",
-    text: "Entfärbung, Phasentrennung, Lösungsmittelverluste, Sekundärabfall und Kostenannahmen mit realen Proben validieren."
+    title: "Technical and economic feasibility",
+    text: "Validate color removal, phase separation, solvent loss, secondary waste, and cost assumptions with real samples."
   },
   {
     phase: "Phase 3",
-    title: "Pilotfähige Projektstruktur",
-    text: "LOIs, Pilotkonzept, Budgetlogik und Förder- oder Partnerunterlagen für den nächsten industriellen Entwicklungsschritt vorbereiten."
+    title: "Pilot-ready project structure",
+    text: "Prepare LOIs, pilot concept, budget logic, and grant or partner materials for the next industrial development step."
   }
 ];
 
 const impactItems = [
   {
-    title: "Potenzielle Schlammreduktion",
-    text: "HydroTex prüft, ob ein extraktionsgestützter Ansatz die Schlammbelastung gegenüber chemikalienintensiven Fällungs- und Flockungsverfahren verringern kann.",
+    title: "Potential sludge reduction",
+    text: "HydroTex aims to assess whether an extraction-based approach can reduce sludge burden compared with chemical-intensive coagulation and flocculation pathways.",
     icon: TrendingDown
   },
   {
-    title: "Niedrigere Compliance-Risiken",
-    text: "Der Fokus liegt auf farbstoffreichen Abwässern, sichtbarer Entfärbung und besser nachvollziehbarer Behandlungspraxis.",
+    title: "Lower compliance risk",
+    text: "The focus is dye-rich wastewater, visible color reduction, and more transparent treatment evidence.",
     icon: ShieldCheck
   },
   {
-    title: "Grant- und Impact-Relevanz",
-    text: "Die Validierung adressiert Ressourceneffizienz, Abfallreduktion und praktische Umweltwirkung in textilen Lieferketten.",
+    title: "Grant and impact relevance",
+    text: "Validation addresses resource efficiency, waste reduction, and practical environmental impact in textile supply chains.",
     icon: Leaf
   }
 ];
 
 const validationTargets = [
-  "Reale Textilabwasserproben aus Malaysia und Südostasien",
-  "Farbstoffentfernung, Phasentrennung und wiederholte Regeneration",
-  "Lösungsmittelverlust, Sekundärabfall und vorläufige OPEX-Logik",
-  "Pilotkonzept, Partnergespräche und mögliche LOIs"
+  "Real textile wastewater samples from Malaysia and Southeast Asia",
+  "Color removal, phase separation, and repeated regeneration",
+  "Solvent loss, secondary waste, and preliminary OPEX logic",
+  "Pilot concept, partner discussions, and possible LOIs"
 ];
 
 const schema = {
@@ -137,7 +135,7 @@ const schema = {
       "@type": "Person",
       "@id": "https://www.hydrotex.eu/#founder",
       name: "Dr. Amir Talebi",
-      jobTitle: "Gründer und Umwelttechnologie-Fachmann",
+      jobTitle: "Founder and Environmental Technology Specialist",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Freiburg im Breisgau",
@@ -147,28 +145,28 @@ const schema = {
     },
     {
       "@type": "Service",
-      "@id": "https://www.hydrotex.eu/#service",
-      name: "Textilabwasser-Machbarkeit und Pilotvorbereitung",
+      "@id": "https://www.hydrotex.eu/#service-en",
+      name: "Textile wastewater feasibility and pilot preparation",
       provider: {
         "@id": "https://www.hydrotex.eu/#organization"
       },
-      areaServed: ["Deutschland", "Malaysia", "Südostasien"],
+      areaServed: ["Germany", "Malaysia", "Southeast Asia"],
       serviceType:
-        "Umwelttechnik, Machbarkeitsstudien, Textilabwasserbewertung und Pilotvorbereitung",
+        "Environmental technology, feasibility studies, textile wastewater assessment, and pilot preparation",
       description:
-        "HydroTex unterstützt die Validierung schlammärmerer Behandlungsansätze für farbstoffreiche Textilabwässer."
+        "HydroTex supports validation of lower-sludge treatment approaches for dye-rich textile wastewater."
     }
   ]
 };
 
-export default function GermanHome() {
+export default function EnglishHome() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <main lang="de">
+      <main lang="en">
         <Header />
         <Hero />
         <Services />
@@ -188,7 +186,7 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-white/80 backdrop-blur-xl">
       <nav className="section-shell flex h-16 items-center justify-between">
-        <Link href="#top" className="flex items-center gap-3" aria-label="HydroTex Startseite">
+        <Link href="#top" className="flex items-center gap-3" aria-label="HydroTex home">
           <span className="flex size-9 items-center justify-center rounded-full bg-hydro-teal text-white">
             <Waves size={19} strokeWidth={2.4} />
           </span>
@@ -196,25 +194,25 @@ function Header() {
         </Link>
         <div className="hidden items-center gap-6 text-sm font-medium text-hydro-slate md:flex">
           <Link href="#services" className="transition hover:text-hydro-teal">
-            Modell
+            Model
           </Link>
           <Link href="#impact" className="transition hover:text-hydro-teal">
-            Wirkung
+            Impact
           </Link>
           <Link href="#pathway" className="transition hover:text-hydro-teal">
-            Validierung
+            Validation
           </Link>
-          <Link href="/international-partnerships" className="transition hover:text-hydro-teal">
-            Kooperation
+          <Link href="/en/international-partnerships" className="transition hover:text-hydro-teal">
+            Partnerships
           </Link>
           <Link href="#founder" className="transition hover:text-hydro-teal">
-            Gründer
+            Founder
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <LanguageSwitcher current="de" />
+          <LanguageSwitcher current="en" />
           <Link href="#contact" className="btn-secondary hidden py-2.5 sm:inline-flex">
-            Kontakt
+            Contact
           </Link>
         </div>
       </nav>
@@ -233,7 +231,7 @@ function LanguageSwitcher({ current }: { current: "en" | "de" }) {
   return (
     <div
       className="flex items-center rounded-full border border-hydro-line bg-white/82 p-1"
-      aria-label="Sprachauswahl"
+      aria-label="Language selector"
     >
       <Link href="/en" className={optionClass("en")} aria-current={current === "en" ? "page" : undefined}>
         EN
@@ -260,7 +258,7 @@ function Hero() {
           aria-hidden="true"
         >
           <defs>
-            <linearGradient id="waveStrokeDe" x1="0" x2="1" y1="0" y2="0">
+            <linearGradient id="waveStrokeEn" x1="0" x2="1" y1="0" y2="0">
               <stop offset="0%" stopColor="#4BB6B7" stopOpacity="0.04" />
               <stop offset="48%" stopColor="#0F8B78" stopOpacity="0.18" />
               <stop offset="100%" stopColor="#166A8F" stopOpacity="0.08" />
@@ -271,7 +269,7 @@ function Hero() {
               key={y}
               d={`M -120 ${y} C 160 ${y - 50}, 310 ${y + 55}, 570 ${y} S 980 ${y - 55}, 1560 ${y + 18}`}
               fill="none"
-              stroke="url(#waveStrokeDe)"
+              stroke="url(#waveStrokeEn)"
               strokeWidth={index % 3 === 0 ? 2.2 : 1.4}
             />
           ))}
@@ -280,34 +278,32 @@ function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-hydro-paper/90 to-transparent" />
       <div className="section-shell relative flex min-h-[calc(86vh-4rem)] items-center py-16 sm:py-20">
         <div className="max-w-3xl">
-          <p className="eyebrow">Textilabwasser · Machbarkeit · Pilotvorbereitung</p>
+          <p className="eyebrow">Textile wastewater · feasibility · pilot preparation</p>
           <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.04] text-hydro-ink sm:text-5xl lg:text-6xl">
-            Schlammärmere Textilabwasserbehandlung realistisch validieren.
+            Realistic validation for lower-sludge textile wastewater treatment.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-hydro-slate sm:text-xl">
-            HydroTex ist eine gründergeführte Umwelttechnik- und
-            Projektentwicklungsinitiative aus Freiburg. Der erste Schritt ist
-            nicht Anlagenverkauf, sondern belastbare Machbarkeitsarbeit:
-            Abwasserbewertung, techno-ökonomische Prüfung, Industriegespräche
-            und pilotfähige Validierungsunterlagen.
+            HydroTex is a founder-led environmental technology and
+            project-development initiative from Freiburg. The first step is not
+            equipment sales, but evidence-building: wastewater assessment,
+            techno-economic review, industrial engagement, and pilot-ready
+            validation material.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="#services" className="btn-primary">
-              Geschäftsmodell ansehen <ArrowRight size={18} />
+              View the business model <ArrowRight size={18} />
             </Link>
             <Link href="#partnership" className="btn-secondary">
-              Pilotpartnerschaft prüfen <Mail size={18} />
+              Explore pilot partnership <Mail size={18} />
             </Link>
           </div>
           <div className="mt-10 grid max-w-3xl grid-cols-1 gap-3 text-sm text-hydro-slate sm:grid-cols-3">
-            {["Feasibility-first", "Low-overhead Aufbau", "Validierung mit realem Abwasser"].map(
-              (item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <CheckCircle2 className="shrink-0 text-hydro-teal" size={18} />
-                  <span>{item}</span>
-                </div>
-              )
-            )}
+            {["Feasibility-first", "Low-overhead setup", "Real wastewater validation"].map((item) => (
+              <div key={item} className="flex items-center gap-2">
+                <CheckCircle2 className="shrink-0 text-hydro-teal" size={18} />
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -319,15 +315,15 @@ function Services() {
   return (
     <Reveal id="services" className="bg-white py-20 sm:py-24">
       <div className="section-shell">
-        <p className="eyebrow">Business Model</p>
+        <p className="eyebrow">Business model</p>
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <h2 className="section-title">Erst prüfen, dann pilotieren.</h2>
+            <h2 className="section-title">Feasibility first, pilot second.</h2>
             <p className="section-copy">
-              HydroTex ist in der Frühphase als gewerbliche Umwelttechnik-,
-              Beratungs- und Projektentwicklungsdienstleistung strukturiert.
-              Umsatz entsteht zunächst über projektbasierte Leistungen, nicht
-              über große Infrastrukturannahmen.
+              HydroTex is structured at the early stage as a commercial
+              environmental technology, consulting, and project-development
+              service. Revenue is expected first through project-based services,
+              not through large infrastructure assumptions.
             </p>
           </div>
           <div className="grid gap-4">
@@ -353,12 +349,12 @@ function Impact() {
   return (
     <Reveal id="impact" className="py-20 sm:py-24">
       <div className="section-shell">
-        <p className="eyebrow">Impact und Kundennutzen</p>
-        <h2 className="section-title">Praktische Wirkung für Textilbetriebe, Fördergeber und Impact-Investoren.</h2>
+        <p className="eyebrow">Impact and customer value</p>
+        <h2 className="section-title">Practical relevance for textile mills, grant providers, and impact investors.</h2>
         <p className="section-copy">
-          Der Nutzen liegt in einem prüfbaren Pfad zu weniger Schlammbelastung,
-          geringerer chemischer Abhängigkeit, besserer Compliance-Sicherheit und
-          realistischeren Pilotentscheidungen.
+          The value lies in a testable pathway to lower sludge burden, reduced
+          chemical dependency, better compliance confidence, and more realistic
+          pilot decisions.
         </p>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {impactItems.map(({ title, text, icon: Icon }) => (
@@ -379,30 +375,30 @@ function Technology() {
     <Reveal id="technology" className="bg-white py-20 sm:py-24">
       <div className="section-shell grid gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
         <div>
-          <p className="eyebrow">Technologiekonzept</p>
-          <h2 className="section-title">Lösungsmittelbasierte Extraktion, nüchtern validiert.</h2>
+          <p className="eyebrow">Technology concept</p>
+          <h2 className="section-title">Solvent extraction, validated without hype.</h2>
           <p className="section-copy">
-            HydroTex untersucht einen regenerierbaren Extraktionsansatz für
-            farbstoffreiche Textilabwässer. Die Technologie ist noch in der
-            Validierungsphase: Entscheidend sind reale Proben, robuste
-            Phasentrennung, Lösungsmittelstabilität, Sekundärabfall und
-            nachvollziehbare Kosten pro Kubikmeter.
+            HydroTex investigates a regenerable extraction approach for
+            dye-rich textile wastewater. The technology is still in validation:
+            the critical questions are real samples, robust phase separation,
+            solvent stability, secondary waste, and credible cost per cubic
+            meter.
           </p>
         </div>
         <div className="rounded-[8px] border border-hydro-line bg-hydro-paper p-5 shadow-soft">
           <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
-            <ProcessNode icon={Factory} title="Textilbetrieb" text="Farbige Abwässer, Schlamm- und Compliance-Druck" />
+            <ProcessNode icon={Factory} title="Textile mill" text="Colored effluent, sludge and compliance pressure" />
             <ArrowRight className="mx-auto hidden text-hydro-aqua sm:block" />
-            <ProcessNode icon={FlaskConical} title="HydroTex-Prüfung" text="Extraktion, Regeneration, Kostenlogik" featured />
+            <ProcessNode icon={FlaskConical} title="HydroTex review" text="Extraction, regeneration, cost logic" featured />
             <ArrowRight className="mx-auto hidden text-hydro-aqua sm:block" />
-            <ProcessNode icon={Recycle} title="Pilotentscheidung" text="Datenbasierte nächste Schritte" />
+            <ProcessNode icon={Recycle} title="Pilot decision" text="Data-based next step" />
           </div>
           <div className="mt-4 rounded-[8px] bg-white p-4 text-sm leading-6 text-hydro-slate">
-            <strong className="text-hydro-ink">Digitale Prozessoptimierung:</strong> Eine
-            spätere digitale Ebene kann Prozessmonitoring, Umwelt-Datenanalyse
-            und datenbasierte Optimierung umfassen. KI-gestützte Optimierung
-            kann perspektivisch relevant werden, wenn ausreichend Labor- und
-            Pilotdaten vorliegen.
+            <strong className="text-hydro-ink">Digital process optimisation:</strong> A later
+            digital layer may include process monitoring, environmental data
+            analytics, and data-driven optimisation. AI-supported optimisation
+            may become relevant only after enough laboratory and pilot data
+            exist.
           </div>
         </div>
       </div>
@@ -438,14 +434,15 @@ function Pathway() {
   return (
     <Reveal id="pathway" className="py-20 sm:py-24">
       <div className="section-shell">
-        <p className="eyebrow">Validierungsroadmap</p>
+        <p className="eyebrow">Validation roadmap</p>
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <h2 className="section-title">Ein Förder- und pilotfähiger Entwicklungspfad.</h2>
+            <h2 className="section-title">A grant- and pilot-ready development pathway.</h2>
             <p className="section-copy">
-              Der Aufbau ist bewusst schlank: Homeoffice-Koordination in
-              Freiburg, Industrie- und Hochschulpartner für Validierung,
-              Malaysia als erster Zugang zu realen Textilabwasserströmen.
+              The setup is intentionally lean: home-office coordination in
+              Freiburg, industrial and university partners for validation, and
+              Malaysia as the first access route to real textile wastewater
+              streams.
             </p>
             <ul className="mt-6 space-y-3 text-sm leading-6 text-hydro-slate">
               {validationTargets.map((item) => (
@@ -473,28 +470,27 @@ function Pathway() {
 
 function PartnershipsStatus() {
   const statusItems = [
-    "HydroTex befindet sich in strukturierter Gründungsvorbereitung in Deutschland und ist noch kein formal registriertes operatives Unternehmen.",
-    "Geschäftsmodell und Pitch Deck wurden durch EXI.green / Grünhof-Unterstützung weiterentwickelt.",
-    "Businessplan und Tragfähigkeitsbewertung werden mit IHK-Unterstützung vorbereitet.",
-    "Die akademische Zusammenarbeit mit der Universiti Sains Malaysia ist durch einen Letter of Intent dokumentiert.",
-    "Malaysia ist als erste internationale Validierungsregion für reale Abwasserprüfung und Pilotvorbereitung vorgesehen."
+    "HydroTex is in structured startup preparation in Germany, not yet a formally registered operating company.",
+    "The business model and pitch deck have been developed further through EXI.green / Grunhof support.",
+    "The business plan and viability assessment are being prepared with IHK support.",
+    "Academic collaboration with Universiti Sains Malaysia is documented by a Letter of Intent.",
+    "Malaysia is planned as the first international validation region for real wastewater learning and pilot preparation."
   ];
 
   return (
     <Reveal id="partnerships-status" className="bg-white py-20 sm:py-24">
       <div className="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
-          <p className="eyebrow">Partnerschaften und Validierungsstatus</p>
-          <h2 className="section-title">Strukturierte Vorbereitung für internationale Kooperation.</h2>
+          <p className="eyebrow">Partnerships and validation status</p>
+          <h2 className="section-title">Structured preparation for international cooperation.</h2>
           <p className="section-copy">
-            HydroTex wird als Umwelttechnologie-Initiative mit einem klaren
-            Validierungspfad vorbereitet. Der aktuelle Schwerpunkt liegt auf
-            der Gründungs- und Businessplanung in Deutschland, dem Aufbau von
-            Partnern und der sorgfältigen Vorbereitung einer realen
-            Abwasservalidierung in Malaysia.
+            HydroTex is being prepared as an environmental technology initiative
+            with a clear validation pathway. The current focus is business
+            planning in Germany, partner development, and careful preparation
+            for real wastewater validation in Malaysia.
           </p>
-          <Link href="/international-partnerships" className="btn-primary mt-7">
-            Internationale Kooperation <ArrowRight size={18} />
+          <Link href="/en/international-partnerships" className="btn-primary mt-7">
+            International partnerships <ArrowRight size={18} />
           </Link>
         </div>
         <div className="grid gap-3">
@@ -524,8 +520,8 @@ function Founder() {
             loading="lazy"
           />
           <h2 className="mt-6 text-2xl font-semibold text-hydro-ink">Dr. Amir Talebi</h2>
-          <p className="mt-2 text-hydro-blue">Gründer · Environmental Technology</p>
-          <p className="mt-1 text-sm text-hydro-slate">Freiburg im Breisgau / Südlicher Oberrhein</p>
+          <p className="mt-2 text-hydro-blue">Founder · Environmental Technology</p>
+          <p className="mt-1 text-sm text-hydro-slate">Freiburg im Breisgau / Southern Upper Rhine</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="https://de.linkedin.com/in/amirtalebienvtech"
@@ -536,22 +532,22 @@ function Founder() {
               <Linkedin size={17} /> LinkedIn
             </a>
             <a href="mailto:contact@hydrotex.eu" className="btn-secondary bg-white py-2.5">
-              <Mail size={17} /> E-Mail
+              <Mail size={17} /> Email
             </a>
           </div>
         </div>
         <div>
-          <p className="eyebrow">Founder-led Initiative</p>
-          <h2 className="section-title">Umwelttechnologie, internationale Validierung und datenbasierte Entwicklung.</h2>
+          <p className="eyebrow">Founder-led initiative</p>
+          <h2 className="section-title">Environmental technology, international validation, and data-driven development.</h2>
           <p className="section-copy">
-            Dr. Amir Talebi verbindet einen PhD in Environmental Technology,
-            mehr als 15 Jahre Berufserfahrung in Malaysia, Expertise in
-            Abwasserbehandlung und Ressourcenrückgewinnung, Umwelt-Datenanalyse
-            sowie internationale Kooperationserfahrung. HydroTex ist als
-            schrittweiser Übergang in eine spezialisierte Umwelttechnologie-
-            und Projektentwicklungsinitiative angelegt. Der aktuelle
-            Schwerpunkt liegt auf Kundengesprächen, realen Abwasserproben,
-            Machbarkeitsnachweisen und Pilotvorbereitung.
+            Dr. Amir Talebi combines a PhD in Environmental Technology, more
+            than 15 years of professional experience in Malaysia, wastewater
+            treatment and resource recovery expertise, environmental data
+            science and analytics, and international collaboration experience.
+            HydroTex is structured as a gradual transition into a specialized
+            environmental technology and project-development initiative, with
+            the current focus on customer discovery, real wastewater samples,
+            feasibility evidence, and pilot preparation.
           </p>
         </div>
       </div>
@@ -565,26 +561,26 @@ function Partnership() {
       <div className="section-shell">
         <div className="rounded-[8px] border border-hydro-line bg-hydro-ink p-6 text-white sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-hydro-aqua">Pilot Partnership</p>
-            <h2 className="mt-3 text-3xl font-semibold">Gesucht: Industrie- und Validierungspartner.</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-hydro-aqua">Pilot partnership</p>
+            <h2 className="mt-3 text-3xl font-semibold">Seeking industrial and validation partners.</h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/72">
-              HydroTex sucht textile Betriebe, Hochschulpartner und
-              Förderakteure für reale Abwasserproben, technische Gespräche,
-              LOI-fähige Kooperationen und pilotorientierte Projektentwicklung.
+              HydroTex is looking for textile mills, university partners, and
+              funding actors for real wastewater samples, technical discussions,
+              LOI-ready cooperation, and pilot-oriented project development.
             </p>
           </div>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-0">
             <a
-              href="mailto:contact@hydrotex.eu?subject=HydroTex%20Pilotpartnerschaft"
+              href="mailto:contact@hydrotex.eu?subject=HydroTex%20Pilot%20Partnership"
               className="btn-primary bg-white text-hydro-ink hover:bg-hydro-mint"
             >
-              <Mail size={18} /> Kontakt aufnehmen
+              <Mail size={18} /> Contact
             </a>
             <a
-              href="mailto:contact@hydrotex.eu?subject=HydroTex%20Unterlagen"
+              href="mailto:contact@hydrotex.eu?subject=HydroTex%20Materials"
               className="btn-secondary border-white/20 bg-white/8 text-white hover:border-white/50 hover:text-white"
             >
-              <Mail size={18} /> Unterlagen anfragen
+              <Mail size={18} /> Request materials
             </a>
           </div>
         </div>
@@ -601,9 +597,9 @@ function ContactFooter() {
           <div>
             <h2 className="text-2xl font-semibold text-hydro-ink">HydroTex</h2>
             <p className="mt-4 max-w-xl text-sm leading-6 text-hydro-slate">
-              Gründergeführte Umwelttechnik- und Projektentwicklungsinitiative
-              für Machbarkeit, Abwasserbewertung und Pilotvorbereitung im
-              Textilabwasser.
+              Founder-led environmental technology and project-development
+              initiative for feasibility, wastewater assessment, and pilot
+              preparation in textile wastewater.
             </p>
             <a href="mailto:contact@hydrotex.eu" className="mt-6 inline-flex text-sm font-semibold text-hydro-teal hover:text-hydro-blue">
               contact@hydrotex.eu
@@ -612,23 +608,23 @@ function ContactFooter() {
           <div>
             <h3 className="font-semibold text-hydro-ink">Navigation</h3>
             <div className="mt-4 grid gap-3 text-sm text-hydro-slate">
-              <Link href="#services" className="hover:text-hydro-teal">Business Model</Link>
+              <Link href="#services" className="hover:text-hydro-teal">Business model</Link>
               <Link href="#impact" className="hover:text-hydro-teal">Impact</Link>
-              <Link href="#pathway" className="hover:text-hydro-teal">Validierung</Link>
-              <Link href="/international-partnerships" className="hover:text-hydro-teal">Internationale Kooperation</Link>
-              <Link href="#partnership" className="hover:text-hydro-teal">Pilotpartnerschaft</Link>
+              <Link href="#pathway" className="hover:text-hydro-teal">Validation</Link>
+              <Link href="/en/international-partnerships" className="hover:text-hydro-teal">International partnerships</Link>
+              <Link href="#partnership" className="hover:text-hydro-teal">Pilot partnership</Link>
             </div>
           </div>
           <div>
-            <h3 className="font-semibold text-hydro-ink">Rechtliches</h3>
+            <h3 className="font-semibold text-hydro-ink">Legal</h3>
             <div className="mt-4 grid gap-3 text-sm text-hydro-slate">
-              <Link href="/impressum" className="hover:text-hydro-teal">Impressum</Link>
-              <Link href="/datenschutz" className="hover:text-hydro-teal">Datenschutz</Link>
+              <Link href="/impressum" className="hover:text-hydro-teal">Imprint</Link>
+              <Link href="/datenschutz" className="hover:text-hydro-teal">Privacy Policy</Link>
             </div>
           </div>
         </div>
         <div className="mt-10 border-t border-hydro-line pt-6 text-sm text-hydro-slate">
-          © {new Date().getFullYear()} HydroTex. Freiburg, Deutschland.
+          © {new Date().getFullYear()} HydroTex. Freiburg, Germany.
         </div>
       </div>
     </footer>
