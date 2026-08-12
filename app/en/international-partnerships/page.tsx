@@ -151,7 +151,7 @@ function Hero() {
         <div className="rounded-[8px] border border-hydro-line bg-white/86 p-6 shadow-soft">
           <div className="mb-5 flex items-center gap-4 rounded-[8px] bg-hydro-paper p-4">
             <img
-              src="/images/amir-talebi-headshot.webp"
+              src="/images/amir-talebi-lab-portrait.webp"
               alt="Dr.-Ing. Amir Talebi, founder of HydroTex"
               className="size-24 rounded-full border-4 border-white object-cover shadow-soft sm:size-28"
               loading="lazy"

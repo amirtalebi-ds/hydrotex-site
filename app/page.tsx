@@ -518,7 +518,7 @@ function Founder() {
       <div className="section-shell grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
         <div className="rounded-[8px] border border-hydro-line bg-hydro-paper p-6 shadow-soft">
           <img
-            src="/images/amir-talebi-headshot.webp"
+            src="/images/amir-talebi-lab-portrait.webp"
             alt="Dr.-Ing. Amir Talebi, founder of HydroTex"
             className="size-32 rounded-full border-4 border-white object-cover shadow-soft sm:size-36"
             loading="lazy"
