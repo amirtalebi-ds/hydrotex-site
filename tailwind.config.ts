@@ -9,14 +9,14 @@ const config: Config = {
     extend: {
       colors: {
         hydro: {
-          ink: "#0B2545",
-          blue: "#166A8F",
-          teal: "#0F8B78",
-          aqua: "#4BB6B7",
-          mint: "#DDF7F0",
-          paper: "#F7FBFA",
-          line: "#D9E8E6",
-          slate: "#496173"
+          ink: "#082B4C",
+          blue: "#026CB0",
+          teal: "#026CB0",
+          aqua: "#00A9B7",
+          mint: "#EFF6FA",
+          paper: "#F8FAFC",
+          line: "#DCE5ED",
+          slate: "#4C6378"
         }
       },
       boxShadow: {
@@ -28,3 +28,4 @@ const config: Config = {
 };
 
 export default config;
+
