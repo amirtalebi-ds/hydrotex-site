@@ -1,3 +1,4 @@
+import { FlaskConical, ChartNoAxesCombined, Waypoints } from "lucide-react";
 import { content, type Locale } from "./content";
 export function FlowVisual({ locale }: { locale: Locale }) {
   const de = locale === "de";
@@ -33,5 +34,11 @@ export function FlowVisual({ locale }: { locale: Locale }) {
 }
 export function DataVisual({ locale }: { locale: Locale }) {
   const t = content[locale];
-  return <figure className="data-visual"><div className="figure-top"><span>{locale === "de" ? "DATEN → ERKENNTNIS → ENTSCHEIDUNG" : "DATA → INSIGHT → DECISION"}</span><span className="status-dot" /></div><div className="data-inputs">{t.dataInputs.map((input, i) => <div key={input}><span>0{i+1}</span>{input}<i aria-hidden="true"/></div>)}</div><ol className="data-stages">{t.dataSteps.map((step, i) => <li key={step}><span aria-hidden="true">{i === 1 ? "⌁" : i === 2 ? "↗" : "≋"}</span>{step}</li>)}</ol><figcaption>{t.concept}</figcaption></figure>;
+  const icons = [FlaskConical, ChartNoAxesCombined, Waypoints];
+  return <figure className="data-visual strategy-panel">
+    <div className="figure-top"><span>{locale === "de" ? "DATEN → ERKENNTNIS → ENTSCHEIDUNG" : "DATA → INSIGHT → DECISION"}</span><span className="status-dot" /></div>
+    <div className="strategy-inputs">{t.dataInputs.map((input, i) => <div key={input}><span className="strategy-number">0{i + 1}</span><span>{input}</span></div>)}</div>
+    <ol className="strategy-stages">{t.dataSteps.map((step, i) => { const Icon = icons[i]; return <li key={step}><span className="strategy-icon"><Icon aria-hidden="true" strokeWidth={1.5}/></span><span>{step}</span></li>; })}</ol>
+    <figcaption>{t.concept}</figcaption>
+  </figure>;
 }

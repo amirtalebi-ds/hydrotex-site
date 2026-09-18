@@ -23,7 +23,7 @@ export function Header({ locale, page = "home" }: { locale: Locale; page?: "home
     <a className="skip-link" href="#main">{t.skip}</a>
     <div className="section-shell header-inner">
       <Link href={home} className="brand" aria-label={locale === "de" ? "HydroTex Startseite" : "HydroTex home"}>
-        <Image src="/images/brand/hydrotex-logo-horizontal.png" alt="HydroTex — Intelligent Water Solutions" width={1774} height={887} sizes="(max-width: 767px) 152px, 208px" priority />
+        <Image src="/images/brand/hydrotex-logo-horizontal.png" alt="HydroTex — Intelligent Water Solutions" width={1774} height={887} sizes="(max-width: 767px) 176px, 264px" unoptimized priority />
       </Link>
       <button className="menu-toggle" ref={button} aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>
         <span>{open ? t.close : t.menu}</span><span aria-hidden="true">{open ? "−" : "+"}</span>
