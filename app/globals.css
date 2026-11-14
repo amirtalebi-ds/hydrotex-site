@@ -801,3 +801,15 @@ html[lang="de"] .homepage :is(
     max-width: 100% !important;
   }
 }
+/* HydroTex: navigation typography refinement */
+
+@media (min-width: 768px) {
+  .nav-links {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .language-switch {
+    font-size: 14px;
+  }
+}
