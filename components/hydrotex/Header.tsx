@@ -9,7 +9,7 @@ export function Header({ locale, page = "home" }: { locale: Locale; page?: "home
   const button = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
   const home = homePath(locale);
-  const links = [home + "#services", home + "#technology", partnerPath(locale), home + "#founder", home + "#contact"];
+  const links = [home + "#services", home + "#intelligence", home + "#technology", home + "#research", home + "#about", home + "#contact"];
   const languagePath = (lang: Locale) => page === "partners" ? partnerPath(lang) : page === "imprint" ? (lang === "de" ? "/impressum" : "/imprint") : page === "privacy" ? (lang === "de" ? "/datenschutz" : "/privacy") : homePath(lang);
   useEffect(() => {
     if (!open) return;

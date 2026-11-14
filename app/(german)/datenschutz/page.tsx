@@ -18,7 +18,7 @@ export default function DatenschutzPage() {
           <div className="mt-8 space-y-6 text-base leading-7 text-hydro-slate">
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">1. Verantwortlicher</h2>
-              <p className="mt-2">Dr.-Ing. Amir Talebi<br />HydroTex – Gründungsvorhaben<br />Glottertalstraße 13<br />79271 St. Peter<br />Baden-Württemberg<br />Deutschland</p>
+              <p className="mt-2">HydroTex UG (haftungsbeschränkt)<br />Dr.-Ing. Amir Talebi<br />Glottertalstraße 13<br />79271 St. Peter<br />Baden-Württemberg<br />Deutschland</p>
               <p className="mt-2">E-Mail: <a href="mailto:contact@hydrotex.eu" className="text-hydro-teal hover:text-hydro-blue">contact@hydrotex.eu</a></p>
             </section>
             <section>
@@ -33,12 +33,15 @@ export default function DatenschutzPage() {
               <p className="mt-2">Soweit Ihre Anfrage vorvertragliche Maßnahmen auf Ihren Wunsch oder die Durchführung eines Vertrags betrifft, ist Art. 6 Abs. 1 Buchst. b DSGVO die Rechtsgrundlage. In anderen Fällen beruht die Verarbeitung auf Art. 6 Abs. 1 Buchst. f DSGVO und unserem berechtigten Interesse, Anfragen zu beantworten. Die Angaben werden nur so lange aufbewahrt, wie dies zur Bearbeitung der Anfrage und aufgrund anwendbarer gesetzlicher Aufbewahrungspflichten erforderlich ist.</p>
             </section>
             <section>
-              <h2 className="text-lg font-semibold text-hydro-ink">4. Cookies / Analytics</h2>
-              <p className="mt-2">Die aktuelle HydroTex-Website dient der Information. Sie bietet keine Benutzerkonten und kein Kontaktformular; die Kontaktaufnahme erfolgt über E-Mail-Links. Wir setzen auf dieser Website derzeit keine Analysewerkzeuge und kein Werbetracking ein. Für einwilligungspflichtige Analyse-Cookies ist daher derzeit kein Cookie-Banner erforderlich; ein solches Banner ist nicht eingerichtet. Technisch notwendige Verarbeitung durch die Hosting-Infrastruktur bleibt hiervon unberührt.</p>
+              <h2 className="text-lg font-semibold text-hydro-ink">4. Vercel Web Analytics</h2>
+              <p className="mt-2">Wir nutzen Vercel Web Analytics von Vercel Inc. (siehe Abschnitt 2), um die Nutzung unserer Website zu verstehen und unsere Inhalte zu verbessern. Dies ist der einzige in diese Website integrierte Analysedienst. Wir verwenden kein Werbetracking.</p>
+              <p className="mt-2">Nach Angaben von Vercel verwendet Web Analytics keine Cookies und stellt zusammengefasste Nutzungsstatistiken bereit. Zu den Daten können besuchte Seiten, verweisende Seiten, Besuchszeiten, ungefährer Standort, Browser, Betriebssystem und Gerätetyp gehören. Vercel leitet aus der eingehenden Anfrage eine vorübergehende Besucherkennung ab; die Besuchersitzung wird nach 24 Stunden verworfen. Dies bedeutet nicht, dass sämtliche zusammengefassten Statistiken nach 24 Stunden gelöscht werden.</p>
+              <p className="mt-2">Der Dienst verfolgt Besucher nicht über verschiedene Websites hinweg. Wir haben keine benutzerdefinierten Analyseereignisse eingerichtet. Die technische Verarbeitung von Anfragen durch Vercel und mögliche internationale Übermittlungen sind in Abschnitt 2 beschrieben.</p>
+              <p className="mt-2">Weitere Informationen: <a className="text-hydro-teal underline" href="https://vercel.com/docs/analytics/privacy-policy">Vercel Web Analytics – Privacy and Compliance</a>.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">5. Empfänger / Dienstleister</h2>
-              <p className="mt-2">Personenbezogene Daten können durch technische Dienstleister verarbeitet werden, die für den Betrieb der Website und die Bearbeitung von E-Mail-Anfragen eingesetzt werden, insbesondere den Hosting-Anbieter und den jeweiligen E-Mail-Dienstleister. Dies erfolgt nur, soweit es für die jeweilige Leistung erforderlich ist.</p>
+              <p className="mt-2">Personenbezogene Daten können durch technische Dienstleister verarbeitet werden, die für den Betrieb der Website und die Bearbeitung von E-Mail-Anfragen eingesetzt werden, insbesondere Vercel für Hosting und Web Analytics sowie den jeweiligen E-Mail-Dienstleister. Dies erfolgt nur, soweit es für die jeweilige Leistung erforderlich ist.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">6. Speicherdauer</h2>

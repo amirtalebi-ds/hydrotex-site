@@ -10,6 +10,6 @@ export function pageMetadata(locale: Locale, path: string, title: string, descri
 }
 export function homeMetadata(locale: Locale) {
   return pageMetadata(locale, locale === "de" ? "/" : "/en", "HydroTex | Intelligent Water Solutions",
-    locale === "de" ? "Umwelttechnik und intelligente Abwasserlösungen für eine ressourceneffiziente industrielle Wasserbehandlung." : "Environmental engineering and intelligent wastewater solutions for resource-efficient industrial water treatment.",
+    locale === "de" ? "HydroTex UG (haftungsbeschränkt): nachhaltige Wassersysteme, zirkuläre Umwelttechnologien, Datenwissenschaft und digitale Prozessintelligenz." : "HydroTex UG (haftungsbeschränkt): sustainable water systems, circular environmental technologies, data science and digital process intelligence.",
     { de: "/", en: "/en", "x-default": "/" });
 }

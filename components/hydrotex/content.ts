@@ -3,7 +3,7 @@ export const homePath = (locale: Locale) => locale === "de" ? "/" : "/en";
 export const partnerPath = (locale: Locale) => locale === "de" ? "/international-partnerships" : "/en/international-partnerships";
 export const content = {
   en: {
-    nav: ["Solutions", "Technology", "Projects & Collaborations", "About", "Contact"],
+    nav: ["Solutions", "Digital Intelligence", "Textile Wastewater", "Research & Partnerships", "About", "Contact"],
     discuss: "Discuss a project", explore: "Discover our approach", menu: "Menu", close: "Close menu",
     headline: "Intelligent solutions for industrial wastewater.",
     intro: "HydroTex develops and validates resource-efficient solutions for industrial wastewater, combining environmental engineering, process evaluation and data-driven optimisation.",
@@ -43,21 +43,21 @@ export const content = {
     partnersLabel: "Collaboration & development", partnersTitle: "Building the conditions for meaningful validation.",
     partners: [
       ["Academic collaboration", "Collaboration with Universiti Sains Malaysia is documented by a Letter of Intent."],
-      ["Ecosystem support", "Business model and pitch development through EXI.green / Grünhof support; business planning and viability assessment with IHK support."],
+      ["International research networking", "Academic–industry exchange, workshops, collaborative publications and international research networks connecting universities, research organisations and industry."],
       ["Industrial validation", "Seeking suitable industrial wastewater samples and partners for real-wastewater testing and pilot preparation."],
       ["Technology & environmental dialogue", "Open to technical cooperation and dialogue with environmental authorities around validation and application requirements."]
     ],
     partnersLink: "Projects & partnerships",
     founderRole: "Founder · Environmental Technology",
-    founderCopy: "Environmental engineer specialising in wastewater treatment, resource recovery and environmental systems analysis, with international academic and industrial experience across Germany, Southeast Asia and Europe.",
+    founderCopy: "Environmental engineer and founder working across water and wastewater, resource efficiency, environmental data science and international applied research, with academic and industrial experience across Germany, Southeast Asia and Europe.",
     founderLink: "Founder profile",
-    cta: "Have an industrial wastewater challenge?",
-    ctaCopy: "Let’s examine whether HydroTex can help turn it into a technically and economically viable treatment pathway.",
+    cta: "Let’s develop sustainable water solutions.",
+    ctaCopy: "Discuss your water, environmental technology or applied research challenge with HydroTex.",
     footer: "Environmental engineering. Resource-efficient pathways. Intelligent water solutions.",
     legal: ["Imprint", "Privacy"], location: "Freiburg, Germany", skip: "Skip to content"
   },
   de: {
-    nav: ["Lösungen", "Technologie", "Projekte & Kooperationen", "Über uns", "Kontakt"],
+    nav: ["Lösungen", "Digitale Intelligenz", "Textilabwasser", "Forschung & Partnerschaften", "Über uns", "Kontakt"],
     discuss: "Projekt besprechen", explore: "Unseren Ansatz entdecken", menu: "Menü", close: "Menü schließen",
     headline: "Intelligente Lösungen für industrielle Abwässer.",
     intro: "HydroTex entwickelt und validiert ressourceneffiziente Lösungen für industrielle Abwässer und verbindet Umwelttechnik, Prozessbewertung und datenbasierte Optimierung.",
@@ -70,7 +70,7 @@ export const content = {
       ["Entwickeln", "Kundenspezifische Prozesskonzepte, Pilotengineering, Optimierung und Unterstützung bei der Umsetzung."]
     ],
     technologyLabel: "Aktueller Technologieschwerpunkt", technology: "Neue Behandlungswege für farbstoffreiche Textilabwässer.",
-    technologyCopy: "HydroTex untersucht einen regenerierbaren Extraktions- und Trennansatz für farbstoffreiche Textilabwässer. Laborergebnisse bilden den Ausgangspunkt; die Validierung mit realem Abwasser und die Bewertung der Skalierbarkeit sind weitere Schritte im Entwicklungspfad.",
+    technologyCopy: "HydroTex untersucht einen selektiven Extraktions- und Trennansatz mit Regeneration und Rückgewinnung für farbstoffreiche Textilabwässer. Laborergebnisse bilden den Ausgangspunkt; die Validierung mit realem Abwasser und die Bewertung der Skalierbarkeit sind weitere Schritte im Entwicklungspfad.",
     themes: ["Schlammreduktion", "Ressourcenrückgewinnung", "Prozesseffizienz"],
     flow: ["Textilabwasser", "Selektive Extraktion / Trennung", "Regeneration & Rückgewinnung", "Wasserwiederverwendung / geringere Schlammbelastung"],
     flowNote: "Entwicklungskonzept · Ergebnisse sind zu validieren",
@@ -97,16 +97,16 @@ export const content = {
     partnersLabel: "Zusammenarbeit & Entwicklung", partnersTitle: "Die Grundlagen für belastbare Validierung schaffen.",
     partners: [
       ["Akademische Zusammenarbeit", "Die Zusammenarbeit mit der Universiti Sains Malaysia ist durch einen Letter of Intent dokumentiert."],
-      ["Unterstützendes Netzwerk", "Geschäftsmodell und Pitch wurden mit EXI.green / Grünhof weiterentwickelt; Businessplanung und Tragfähigkeitsbewertung werden mit IHK-Unterstützung vorbereitet."],
+      ["Internationale Forschungsvernetzung", "Austausch zwischen Wissenschaft und Industrie, Workshops, gemeinsame Publikationen und internationale Forschungsnetzwerke zwischen Hochschulen, Forschungseinrichtungen und Industrie."],
       ["Industrielle Validierung", "Gesucht werden geeignete industrielle Abwasserproben und Partner für reale Abwassertests und Pilotvorbereitung."],
       ["Technischer und behördlicher Austausch", "Offen für technische Kooperation und den Austausch mit Umweltbehörden zu Validierung und Anwendungsanforderungen."]
     ],
     partnersLink: "Projekte & Kooperationen",
     founderRole: "Gründer · Umwelttechnologie",
-    founderCopy: "Umweltingenieur mit den Schwerpunkten Abwasserbehandlung, Ressourcenrückgewinnung und Umweltsystemanalyse sowie internationaler Erfahrung in Wissenschaft und Industrie in Deutschland, Südostasien und Europa.",
+    founderCopy: "Umweltingenieur und Gründer mit Schwerpunkten in Wasser- und Abwassertechnik, Ressourceneffizienz, Umweltdatenwissenschaft und internationaler angewandter Forschung sowie Erfahrung in Wissenschaft, Industrie und internationalen Forschungskooperationen.",
     founderLink: "Gründerprofil",
-    cta: "Industrielle Abwasserherausforderung?",
-    ctaCopy: "Lassen Sie uns gemeinsam prüfen, ob HydroTex daraus einen technisch und wirtschaftlich tragfähigen Behandlungsansatz entwickeln kann.",
+    cta: "Nachhaltige Wasserlösungen gemeinsam entwickeln.",
+    ctaCopy: "Sprechen Sie mit HydroTex über Ihre Aufgabe in Wassertechnik, Umwelttechnologie oder angewandter Forschung.",
     footer: "Umwelttechnik. Ressourceneffiziente Prozesse. Intelligente Wasserlösungen.",
     legal: ["Impressum", "Datenschutz"], location: "Freiburg, Deutschland", skip: "Zum Inhalt"
   }

@@ -1,5 +1,4 @@
 import { Inter, Manrope } from "next/font/google";
-import Script from "next/script";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -22,7 +21,7 @@ export const baseMetadata = {
     template: "%s | HydroTex",
   },
   description:
-    "Umwelttechnik und intelligente Abwasserlösungen für eine ressourceneffiziente industrielle Wasserbehandlung.",
+    "HydroTex UG (haftungsbeschränkt): nachhaltige Wassersysteme, zirkuläre Umwelttechnologien, Datenwissenschaft und digitale Prozessintelligenz.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -39,7 +38,7 @@ export const baseMetadata = {
   },
   authors: [{ name: "Dr.-Ing. Amir Talebi" }],
   creator: "HydroTex",
-  publisher: "HydroTex",
+  publisher: "HydroTex UG (haftungsbeschränkt)",
 };
 
 export function Document({
@@ -52,20 +51,6 @@ export function Document({
   return (
     <html lang={locale}>
       <body className={`${inter.variable} ${manrope.variable}`}>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-HN2PX8YG1Z"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HN2PX8YG1Z');
-          `}
-        </Script>
-
         {children}
 
         <Analytics />

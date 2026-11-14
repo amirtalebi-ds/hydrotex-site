@@ -18,7 +18,8 @@ export default function ImprintPage() {
           <div className="mt-8 space-y-6 text-base leading-7 text-hydro-slate">
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">Publisher</h2>
-              <p className="mt-2">Dr.-Ing. Amir Talebi<br />HydroTex – founding project<br />Glottertalstraße 13<br />79271 St. Peter<br />Baden-Württemberg<br />Germany</p>
+              <p className="mt-2">HydroTex UG (haftungsbeschränkt)<br />Dr.-Ing. Amir Talebi<br />Glottertalstraße 13<br />79271 St. Peter<br />Baden-Württemberg<br />Germany</p>
+              <p className="mt-2">HRB 736772 · Amtsgericht Freiburg</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">Contact</h2>

@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           <div className="mt-8 space-y-6 text-base leading-7 text-hydro-slate">
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">1. Controller</h2>
-              <p className="mt-2">Dr.-Ing. Amir Talebi<br />HydroTex – founding project<br />Glottertalstraße 13<br />79271 St. Peter<br />Baden-Württemberg<br />Germany</p>
+              <p className="mt-2">HydroTex UG (haftungsbeschränkt)<br />Dr.-Ing. Amir Talebi<br />Glottertalstraße 13<br />79271 St. Peter<br />Baden-Württemberg<br />Germany</p>
               <p className="mt-2">Email: <a href="mailto:contact@hydrotex.eu" className="text-hydro-teal hover:text-hydro-blue">contact@hydrotex.eu</a></p>
             </section>
             <section>
@@ -33,12 +33,15 @@ export default function PrivacyPage() {
               <p className="mt-2">Article 6(1)(b) GDPR applies where your inquiry concerns steps taken at your request before entering into a contract or the performance of a contract. Otherwise, processing is based on Article 6(1)(f) GDPR and our legitimate interest in responding to inquiries. We retain this information only for as long as needed to handle the inquiry and meet applicable legal retention obligations.</p>
             </section>
             <section>
-              <h2 className="text-lg font-semibold text-hydro-ink">4. Cookies / Analytics</h2>
-              <p className="mt-2">The current HydroTex website provides information. It has no user accounts or contact form; contact is available through email links. We do not currently use analytics tools or advertising tracking on this website. A consent banner for analytics cookies is therefore not currently required, and no such banner is installed. This does not exclude technically necessary processing by the hosting infrastructure.</p>
+              <h2 className="text-lg font-semibold text-hydro-ink">4. Vercel Web Analytics</h2>
+              <p className="mt-2">We use Vercel Web Analytics, provided by Vercel Inc. (see section 2), to understand website usage and improve our content. It is the only analytics service integrated into this website. We do not use advertising tracking.</p>
+              <p className="mt-2">According to Vercel, Web Analytics uses no cookies and provides aggregated usage statistics. Data may include pages visited, referrers, visit times, approximate location, browser, operating system and device type. Vercel derives a temporary visitor identifier from the incoming request; the visitor session is discarded after 24 hours. This does not mean that all aggregated statistics are deleted after 24 hours.</p>
+              <p className="mt-2">The service does not track visitors across different websites. We have not configured custom analytics events. Technical request processing by Vercel and potential international transfers are described in section 2.</p>
+              <p className="mt-2">Further information: <a className="text-hydro-teal underline" href="https://vercel.com/docs/analytics/privacy-policy">Vercel Web Analytics – Privacy and Compliance</a>.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">5. Recipients / Service providers</h2>
-              <p className="mt-2">Personal data may be processed by technical service providers used to operate the website and handle email inquiries, particularly the hosting provider and the relevant email service provider. Such processing takes place only where necessary to deliver the relevant service.</p>
+              <p className="mt-2">Personal data may be processed by technical service providers used to operate the website and handle email inquiries, particularly Vercel for hosting and Web Analytics, and the relevant email service provider. Such processing takes place only where necessary to deliver the relevant service.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-hydro-ink">6. Retention</h2>
